@@ -1,0 +1,37 @@
+//universal styles ---------------------------------------------------------------------
+.no-scroll {
+  overflow: hidden !important;
+}
+.visible {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.hidden {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+canvas, img, video {
+  max-width: unset !important;
+}
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+//vue transitions ---------------------------------------------------------------------
+
+//slide-fade ---------------------------
+img.slide-fade-enter-active {
+  transition-delay: .4s;
+}
+.slide-fade-enter-active, .slide-fade-leave-active {
+  transition: 1s;
+}
+.slide-fade-enter {
+  opacity: 0;
+  @include translate(5vw,0,0);
+}
+.slide-fade-leave, .slide-fade-leave-to {
+  opacity: 0;
+  @include translate(-5vw,0,0);
+}

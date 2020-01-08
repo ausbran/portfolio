@@ -1,28 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <navigation />
+    <vue-page-transition name="overlay-up-full">
+      <router-view />
+    </vue-page-transition>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VuePageTransition from 'vue-page-transition'
+import navigation from '@/components/navigation.vue'
+import home from '@/components/home.vue'
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+UIkit.use(Icons);
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    HelloWorld
+    home,
+    navigation
   }
 }
 </script>
 
 <style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import "../node_modules/uikit/src/less/uikit.less";
+
+.overlay-top, .overlay-right, .overlay-bottom, .overlay-left {
+  --overlay-bg: #eee;
+    --transition-duration: .28s;
+  z-index: 99;
 }
 </style>

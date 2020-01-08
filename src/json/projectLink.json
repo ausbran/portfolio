@@ -1,0 +1,24 @@
+{
+  "0": {
+    "title": "Far Out",
+    "description": "Teton Gravity Research’s 33rd Annual Ski & Snowboard film",
+    "type": "design",
+    "designRole": "poster design, film visual identity",
+    "codeRole": "web development",
+    "motionRole": "title animation, web animation",
+    "video": "/media/landing-video.680c2880.mp4",
+    "projectName": "far-out"
+  },
+  "1": {
+    "title": "Breaking Through",
+    "description": "A digital series featuring six female athletes at the top of the action sports world",
+    "type": "code",
+    "projectName": "breaking-through"
+  },
+  "2": {
+    "title": "Melvin Brewing",
+    "description": "description for melvin brewing",
+    "type": "motion",
+    "projectName": "melvin"
+  }
+}
