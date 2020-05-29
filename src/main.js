@@ -7,6 +7,7 @@ import routes from './js/routes';
 import home from './js/home';
 
 require('./main.js')
+Vue.config.productionTip = false;
 
 Vue.use(VueRouter)
 Vue.use(VuePageTransition)

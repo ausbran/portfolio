@@ -10,7 +10,7 @@
 
   <nav v-if="$route.meta.notHome">
     <transition appear name="slide-down">
-      <span temporary @click.stop="toggleNav = !toggleNav">menu</span>
+      <span v-on:click="toggleNav = !toggleNav">menu</span>
     </transition>
     <transition appear name="menu">
     <ul class="menu" v-if="!toggleNav">
@@ -64,7 +64,7 @@ nav {
   }
   span, ul a {
       cursor: pointer;
-      text-shadow: 0px 1px 2px rgba($black, 0.1);
+      // text-shadow: 0px 1px 2px rgba($black, 0.1);
       color: $white;
       font-weight: bold;
       letter-spacing: -.01em;

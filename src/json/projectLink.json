@@ -7,18 +7,21 @@
     "codeRole": "web development",
     "motionRole": "title animation, web animation",
     "video": "/media/landing-video.680c2880.mp4",
-    "projectName": "far-out"
+    "projectName": "far-out",
+    "projectType": "design"
   },
   "1": {
     "title": "Breaking Through",
     "description": "A digital series featuring six female athletes at the top of the action sports world",
     "type": "code",
-    "projectName": "breaking-through"
+    "projectName": "breaking-through",
+    "projectType": "code"
   },
   "2": {
     "title": "Melvin Brewing",
     "description": "description for melvin brewing",
     "type": "motion",
-    "projectName": "melvin"
+    "projectName": "melvin",
+    "projectType": "motion"
   }
 }

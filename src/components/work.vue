@@ -5,6 +5,7 @@
                      v-for="project in projects"
                      v-bind="project"
                      v-bind:key="project.projectName"
+                     v-show="project.projectType"
         />
     </div>
 </template>
