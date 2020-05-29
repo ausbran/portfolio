@@ -1,57 +1,66 @@
 @font-face {
-    font-family: 'Maison Neue Mono';
-    src: url('../assets/fonts/MaisonNeue-Mono.woff2') format('woff2'),
-        url('../assets/fonts/MaisonNeue-Mono.woff') format('woff');
+    font-family: 'Gilroy';
+    src: url('../assets/fonts/Gilroy-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../assets/fonts/Gilroy-UltraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../assets/fonts/Gilroy-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../assets/fonts/Gilroy-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Maison Neue';
-    src: url('../assets/fonts/MaisonNeue-Bold.woff2') format('woff2'),
-        url('../assets/fonts/MaisonNeue-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Maison Neue';
-    src: url('../assets/fonts/MaisonNeue-Medium.woff2') format('woff2'),
-        url('../assets/fonts/MaisonNeue-Medium.woff') format('woff');
+    font-family: 'Gilroy';
+    src: url('../assets/fonts/Gilroy-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Maison Neue Extended';
-    src: url('../assets/fonts/MaisonNeueExtended-Black.woff2') format('woff2'),
-        url('../assets/fonts/MaisonNeueExtended-Black.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Maison Neue';
-    src: url('../assets/fonts/MaisonNeue-Demi.woff2') format('woff2'),
-        url('../assets/fonts/MaisonNeue-Demi.woff') format('woff');
+    font-family: 'Gilroy';
+    src: url('../assets/fonts/Gilroy-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
 }
+
 @font-face {
-    font-family: 'Maison Neue';
-    src: url('../assets/fonts/MaisonNeue-Book.woff2') format('woff2'),
-        url('../assets/fonts/MaisonNeue-Book.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Gilroy';
+    src: url('../assets/fonts/Gilroy-Bold.woff') format('woff');
+    font-weight: bold;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Maison Neue';
-    src: url('../assets/fonts/MaisonNeue-Light.woff2') format('woff2'),
-        url('../assets/fonts/MaisonNeue-Light.woff') format('woff');
-    font-weight: 300;
+    font-family: 'Gilroy';
+    src: url('../assets/fonts/Gilroy-ExtraBold.woff') format('woff');
+    font-weight: 800;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../assets/fonts/Gilroy-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
 * {
   -webkit-font-smoothing: antialiased;
+  font-family: $gilroy;
 }
 body {
-  font-family: $maison;
+  font-family: $gilroy;
 }
 h1, p {
   margin: 0;

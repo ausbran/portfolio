@@ -1,5 +1,5 @@
 document.addEventListener("mousemove", function(e){
-  magnetize('.circle', e);
+  magnetize('.link', e);
 });
 
 function magnetize(el, e){

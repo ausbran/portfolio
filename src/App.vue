@@ -1,15 +1,17 @@
 <template>
   <div id="app">
     <navigation />
-    <vue-page-transition name="overlay-up-full">
+    <vue-page-transition name="fade">
       <router-view />
     </vue-page-transition>
+    <videos />
   </div>
 </template>
 
 <script>
 import VuePageTransition from 'vue-page-transition'
 import navigation from '@/components/navigation.vue'
+import videos from '@/components/videos.vue'
 import home from '@/components/home.vue'
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
@@ -19,7 +21,8 @@ export default {
   name: 'App',
   components: {
     home,
-    navigation
+    navigation,
+    videos
   }
 }
 </script>

@@ -52,7 +52,7 @@ export default {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    height: 95vh;
+    height: 50vh;
     &:after {
       content: '';
       mix-blend-mode: color;
@@ -60,18 +60,6 @@ export default {
       height: 100%;
       position: absolute;
       z-index: -1;
-    }
-    &.design:after {
-      background: rgb(132,239,252);
-      background: linear-gradient(300deg, rgba(132,239,252,1) 0%, rgba(106,179,249,1) 100%);
-    }
-    &.code:after {
-      background: rgb(238,147,192);
-      background: linear-gradient(300deg, rgba(238,147,192,1) 0%, rgba(231,63,209,1) 100%);
-    }
-    &.motion:after {
-      background: rgb(102,212,167);
-      background: linear-gradient(300deg, rgba(102,212,167,1) 0%, rgba(123,250,101,1) 100%);
     }
     video {
       min-width: 100%;
@@ -103,14 +91,12 @@ export default {
       }
       h1 {
         font-size: 8.5em;
-        font-family: $maisonExt;
         text-transform: uppercase;
         line-height: .8em;
         margin: 20px 0 15px -6px;
       }
       .role {
         font-size: 0.55em;
-        font-family: $maisonMono;
         min-width: 225px;
         display: inline-block;
         margin-right: 30px;
