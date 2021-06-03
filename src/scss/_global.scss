@@ -23,14 +23,139 @@ a {
     text-decoration: none;
   }
 }
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+* { cursor: none; }
+//project layout ---------------------------
+.project-container {
+  width: 80%;
+  max-width: 1600px;
+  margin: auto;
+  * {
+    color: #fff;
+  }
+  .project-landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 93vh;
+    font-size: 130px;
+    h1 {
+      font-size: 1em;
+      text-transform: lowercase;
+      letter-spacing: -.02em;
+    }
+    h2 {
+      font-size: .238em;
+      margin: 25px 0;
+    }
+    span, .tasks li:nth-child(1), .roles li:nth-child(1) {
+      @include smallHeaders;
+      display: block;
+      margin-bottom: 40px;
+    }
+    .client-date {
+      display: flex;
+      align-items: center;
+      span span, img {
+        margin-left: 20px;
+        display: inline;
+      }
+      .client {
+        margin-right: 75px;
+        img {
+          width: 60px;
+        }
+      }
+    }
+    hr {
+      margin: 10vh 0 5vh 0;
+    }
+    .project-details {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      .tasks, .roles {
+        width: 20%;
+        li:nth-child(1) {
+
+        }
+      }
+      .description {
+        width: 40%;
+        max-width: 600px;
+      }
+      ul li, p {
+        font-size: 12px;
+        line-height: 27px;
+        font-weight: 600;
+      }
+      ul {
+        padding-left: 0px;
+        list-style: none;
+        li {
+          
+        }
+      }
+    }
+  }
+  .project-body {
+    .pswp__bg {
+      background: #fff !important;
+    }
+    .block {
+      margin-bottom: 120px;
+    }
+    p {
+      @include projectText;
+    }
+    .project-video {
+      video {
+        border-radius: $radius;
+
+        width: 100%;
+      }
+      p {
+        width: 50%;
+        margin-top: 4%;
+      }
+    }
+    .project-image {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 95vh;
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 70%;
+        border-radius: $radius;
+        transition: .4s $ease;
+        &:hover {
+          @include translate(0,-3px,0);
+          opacity: .95;
+        }
+      }
+      p {
+        width: 25%;
+        margin-bottom: 100px;
+      }
+    }
+  }
+}
 
 //vue transitions ---------------------------------------------------------------------
 
 //slide-up ---------------------------
-.text .slide-up-enter-active:nth-of-type(2) {
+.text .slide-up-enter-active:nth-of-type(2), .projectLink .slide-up-enter-active:nth-of-type(2) {
   transition-delay: .3s;
 }
-.text .slide-up-enter-active:nth-of-type(3) {
+.text .slide-up-enter-active:nth-of-type(3), .projectLink .slide-up-enter-active:nth-of-type(3) {
   transition-delay: .6s;
 }
 .slide-up-enter-active, .slide-up-leave-active {

@@ -2,9 +2,15 @@
   <transition appear name="slide-down">
   	<div class="video-container">
       <transition name="fade">
-        <video v-if="$route.meta.motion" class="landing-video motion" muted playsinline autoplay src="@/assets/motion.mp4"></video>
+        <video v-if="$route.meta.design" class="landing-video design" muted playsinline autoplay src="@/assets/video/design.mp4"></video>
       </transition>
-      <video class="landing-video" muted playsinline autoplay loop src="@/assets/new-bg.mp4"></video>
+      <transition name="fade">
+        <video v-if="$route.meta.code" class="landing-video code" muted playsinline autoplay src="@/assets/video/code.mp4"></video>
+      </transition>
+      <transition name="fade">
+        <video v-if="$route.meta.motion" class="landing-video motion" muted playsinline autoplay src="@/assets/video/motion.mp4"></video>
+      </transition>
+      <video class="landing-video" muted playsinline autoplay loop src="@/assets/video/home.mp4"></video>
     </div>
   </transition>
 </template>
@@ -30,12 +36,12 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
-    &.motion {
+    &.motion, &.code, &.design {
       z-index: -1;
     }
   }
   .link {
-    text-shadow: 0px 1px 2px rgba($black, 0.1);
+    text-shadow: $textShadow;
     color: $white;
     font-weight: bold;
     letter-spacing: -.01em;
@@ -55,8 +61,7 @@
       // border: 1px solid rgba($white, 0.75);
       background: transparent;
       // border-radius: calc(#{$circle} / 2);
-      text-shadow: 0px 1px 2px rgba($black, 0.1);
-      cursor: pointer;
+      text-shadow: $textShadow;
       outline: 0;
       &.magnet {
         text-decoration: underline;

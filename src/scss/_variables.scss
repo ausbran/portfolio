@@ -2,19 +2,16 @@
 $black: #292929;
 $white: #fff;
 $gray: #ccc;
-//end color---------------------------------------
 
 //shapes---------------------------------------
 $circle: 75px;
-//end shapes---------------------------------------
+$radius: 3px;
 
 //ease---------------------------------------
 $ease: cubic-bezier(0.23, 1, 0.32, 1);
-//end ease---------------------------------------
 
 //type---------------------------------------
 $gilroy: 'Gilroy', helvetica, sans-serif;
-$maison: 'Maison Neue', helvetica, sans-serif;
-$maisonExt: 'Maison Neue Extended', 'Maison Neue', helvetica, sans-serif;
-$maisonMono: 'Maison Neue Mono', 'Maison Neue', helvetica, sans-serif;
-//end type---------------------------------------
+
+//shadows---------------------------------------
+$textShadow: 0px 1px 2px rgba($black, 0.1);

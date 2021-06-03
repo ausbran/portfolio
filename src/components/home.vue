@@ -2,21 +2,33 @@
   <div id="landing-container">
     <div class="text">
       <transition appear name="slide-up">
-        <router-link to="/design">
-          <h1 class="link">design</h1>
-        </router-link>
+        <kinesis-container>
+          <kinesis-element :strength="20" type="depth">
+            <router-link to="/design">
+              <h1 class="link design">design</h1>
+            </router-link>
+          </kinesis-element>
+        </kinesis-container>
       </transition>
 
       <transition appear name="slide-up">
-        <router-link to="/code">
-          <h1 class="link">code</h1>
-        </router-link>
+        <kinesis-container>
+          <kinesis-element :strength="20" type="depth">
+            <router-link to="/code">
+              <h1 class="link code">code</h1>
+            </router-link>
+          </kinesis-element>
+        </kinesis-container>
       </transition>
 
       <transition appear name="slide-up">
-        <router-link to="/motion">
-          <h1 class="link">motion</h1>
-        </router-link>
+        <kinesis-container>
+          <kinesis-element :strength="20" type="depth">
+            <router-link to="/motion">
+              <h1 class="link motion">motion</h1>
+            </router-link>
+          </kinesis-element>
+        </kinesis-container>
       </transition>
     </div>
   </div>
@@ -34,7 +46,7 @@
   align-items: center;
   display: flex;
   .link {
-    text-shadow: 0px 1px 2px rgba($black, 0.1);
+    text-shadow: $textShadow;
     color: $white;
     font-weight: bold;
     letter-spacing: -.01em;
@@ -54,8 +66,7 @@
       // border: 1px solid rgba($white, 0.75);
       background: transparent;
       // border-radius: calc(#{$circle} / 2);
-      text-shadow: 0px 1px 2px rgba($black, 0.1);
-      cursor: pointer;
+      text-shadow: $textShadow;
       outline: 0;
       &.magnet {
         text-decoration: underline;

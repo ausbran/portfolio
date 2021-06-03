@@ -1,42 +1,42 @@
 <template>
     <div>
-        <project-details v-if="currentProject" :project="currentProject"/>
-        <projectLink v-else 
-                     v-for="project in projects"
-                     v-bind="project"
-                     v-bind:key="project.projectName"
-                     v-show="project.projectType"
-        />
+      <projectLink
+        v-for="project in projects"
+        v-bind="project"
+      />
     </div>
 </template>
 
 <script>
-    import projectLink from './projectLink';
-    import projectDetails from './projectDetails';
-    import json from '@/json/projectLink.json';
-
-    export default {
-        name: 'work',
-        props: {
-            name: String,
-        },
-        data() {
-            return {
-                projects: Object.values(json),
-            };
-        },
-        computed: {
-            currentProject() {
-                if (this.name) {
-                    return this.projects.find(
-                        project => project.projectName === this.name,
-                    );
-                }
-            },
-        },
-        components: {
-            projectLink,
-            projectDetails,
-        },
-    };
+import projectLink from './projectLink';
+import json from '@/json/projectLink.json';
+import $ from 'jquery'
+export default {
+  name: 'work',
+  props: {
+      name: String,
+  },
+  beforeCreate() {
+    var path = location.pathname.slice(1);
+    this.$nextTick(function () {
+      if (path === 'design') {
+        $('.motion, .code').remove();
+      }
+      if (path === 'code') {
+        $('.motion, .design').remove();
+      }
+      if (path === 'motion') {
+        $('.design, .code').remove();
+      }
+    });
+  },
+  data() {
+      return {
+        projects: Object.values(json),
+      };
+  },
+  components: {
+      projectLink,
+  },
+};
 </script>

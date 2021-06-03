@@ -1,46 +1,33 @@
 <template>
-    <div class="projectLink" v-bind:class="type">
-      <router-link v-if="projectName" :to="{ name: 'work', params: { name: projectName }}">
-      <div uk-parallax="opacity: 1,1; viewport: .5;" class="text-wrapper">
-        <p>{{ description }}</p>
-        <h1>{{ title }}</h1>
-        <transition appear name="slide-fade">
-          <div class="role">
-            <span>{{ designRole }}</span>
-            <span></span>
-          </div>
-        </transition>
-        <transition appear name="slide-fade">
-          <div class="role">
-            <span>{{ codeRole }}</span>
-            <span></span>
-          </div>
-        </transition>
-        <transition appear name="slide-fade">
-          <div class="role">
-            <span>{{ motionRole }}</span>
-            <span></span>
-          </div>
-        </transition>
-      </div>
+  <transition appear name="slide-up">
+    <div class="projectLink" :class="type">
+      <router-link :to="name">
+        <kinesis-container>
+          <kinesis-element :strength="15" type="depth">
+            <div class="text-wrapper">
+              <p>{{ description }}</p>
+              <h1>{{ title }}</h1>
+            </div>
+          </kinesis-element>
+        </kinesis-container>
       </router-link>
-      <video :src="video" uk-video="autoplay: inview" muted playsinline loop></video>
+      <div class="video-container">
+        <div class="video-overlay"></div>
+        <video :src="require('@/assets/' + name + '/' + video)" autoplay muted playsinline loop></video>
+      </div>
     </div>
+  </transition>
 </template>
 
 <script>
-  import projectDetails from '@/components/projectDetails.vue'
 export default {
   name: 'projectLink',
   props: {
     description: String,
     title: String,
     type: String,
-    designRole: String,
-    codeRole: String,
-    motionRole: String,
     video: String,
-    projectName: String
+    name: String
   }
 }
 </script>
@@ -48,29 +35,41 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .projectLink {
+    @include flexCenter;
+    width: calc(100vw - 250px);
+    height: calc(100vh - 250px);
+    margin: 125px auto;
     position: relative;
-    display: flex;
-    flex-direction: column;
     overflow: hidden;
-    height: 50vh;
-    &:after {
-      content: '';
-      mix-blend-mode: color;
+    &:first-of-type{
+      .video-overlay {
+        display: none !important;
+      }
+    }
+    a {
+      z-index: 1;
+    }
+    .video-container {
+      @include flexCenter;
       width: 100%;
       height: 100%;
       position: absolute;
-      z-index: -1;
+    }
+    .video-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: $black;
+      top: 0;
+      left: 0;
     }
     video {
+      opacity: .3;
+      object-fit: cover;
       min-width: 100%;
       min-height: 100%;
-      position: absolute;
-      margin-left: 50% !important;
-      @include translate(-50%,0,0);
-      z-index: -1;
-      filter: brightness(0.7);
-      // -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, black));
-      opacity: .6;
+      z-index: 0;
+      mix-blend-mode: luminosity;
     }
     a:hover {
       color: #fff;
@@ -80,7 +79,6 @@ export default {
       }
     }
     .text-wrapper {
-      padding: 5vw;
       font-size: 16px;
       * {
         color: #fff;
@@ -90,8 +88,9 @@ export default {
         font-weight: bold;
       }
       h1 {
+        letter-spacing: -.025em;
         font-size: 8.5em;
-        text-transform: uppercase;
+        font-weight: 600;
         line-height: .8em;
         margin: 20px 0 15px -6px;
       }

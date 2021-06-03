@@ -38,7 +38,7 @@
 nav {
   text-align: center;
   z-index: 999;
-  position: absolute;
+  position: fixed;
   top: 15px;
   font-size: 1em;
   left: 0;
@@ -51,7 +51,7 @@ nav {
   .menu {
     z-index: 999;
     background: white;
-    width: 50vw;
+    width: 100vw;
     height: 100vh;
     right: 0;
     top: 0;
@@ -63,7 +63,6 @@ nav {
     justify-content: space-evenly;
   }
   span, ul a {
-      cursor: pointer;
       // text-shadow: 0px 1px 2px rgba($black, 0.1);
       color: $white;
       font-weight: bold;

@@ -1,27 +1,30 @@
 {
-  "0": {
-    "title": "Far Out",
-    "description": "Teton Gravity Research’s 33rd Annual Ski & Snowboard film",
+  "farout": {
+    "name": "farout",
     "type": "design",
-    "designRole": "poster design, film visual identity",
-    "codeRole": "web development",
-    "motionRole": "title animation, web animation",
-    "video": "/media/landing-video.680c2880.mp4",
-    "projectName": "far-out",
-    "projectType": "design"
+    "title": "far out",
+    "description": "Teton Gravity Research’s 33rd Annual Ski & Snowboard film",
+    "video": "far-out-trailer.mp4"
   },
-  "1": {
-    "title": "Breaking Through",
-    "description": "A digital series featuring six female athletes at the top of the action sports world",
+  "breakingthrough": {
+    "name": "breakingthrough",
     "type": "code",
-    "projectName": "breaking-through",
-    "projectType": "code"
+    "title": "breaking through",
+    "description": "A digital series featuring six female athletes at the top of the action sports world",
+    "video": "far-out-trailer.mp4"
   },
-  "2": {
-    "title": "Melvin Brewing",
-    "description": "description for melvin brewing",
+  "journeyreward": {
+    "name": "journeyreward",
     "type": "motion",
-    "projectName": "melvin",
-    "projectType": "motion"
+    "title": "journey > reward",
+    "description": "A digital series featuring six female athletes at the top of the action sports world",
+    "video": "far-out-trailer.mp4"
+  },
+  "melvin": {
+    "name": "melvin",
+    "type": "design",
+    "title": "experimental series",
+    "description": "description for melvin brewing",
+    "video": "far-out-trailer.mp4"
   }
 }

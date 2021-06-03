@@ -1,6 +1,7 @@
 import home from '@/components/home.vue';
 import about from '@/components/about.vue';
 import work from '@/components/work.vue';
+import farout from '@/components/farout.vue';
 import navigation from '@/components/navigation.vue';
 
 const routes = [
@@ -25,15 +26,17 @@ const routes = [
     	name: 'design',
     	component: work,
     	meta: {
-				notHome: true
+				notHome: true,
+        design: true
     	}
     },
     {
     	path: '/code',
-    	name: 'about',
+    	name: 'code',
     	component: work,
     	meta: {
-				notHome: true
+				notHome: true,
+        code: true
     	}
     },
     {
@@ -41,18 +44,18 @@ const routes = [
     	name: 'motion',
     	component: work,
     	meta: {
-				notHome: true,
-				motion: true
-    	}
+  			notHome: true,
+  			motion: true
+    	},
     },
     {
-    	path: '/work/:name?', 
-    	name: 'work',
-    	component: work,
-    	props: true,
-	    meta: {
-				notHome: true
-    	}
+      path: '/farout',
+      name: 'farout',
+      component: farout,
+      meta: {
+        notHome: true,
+        design: true
+      }
     },
 ];
 

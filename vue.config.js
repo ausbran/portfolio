@@ -1,7 +1,6 @@
 module.exports = {
-  mode: 'production',
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/portfolio/'
+    ? '/portfolio/dist/'
     : '/',
   css: {
     loaderOptions: {
