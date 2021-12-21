@@ -6,6 +6,8 @@ import VueKinesis from "vue-kinesis";
 import $ from 'jquery'
 import routes from './js/routes'
 import scripts from './js/scripts'
+import VuePlyr from 'vue-plyr'
+import 'vue-plyr/dist/vue-plyr.css'
 
 require('./main.js')
 Vue.config.productionTip = false;
@@ -13,6 +15,11 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter)
 Vue.use(VuePageTransition)
 Vue.use(VueKinesis);
+Vue.use(VuePlyr, {
+  plyr: {
+  	controls: ['play-large', 'play', 'progress', 'mute', 'volume', 'fullscreen']
+  }
+})
 
 const router = new VueRouter({
 	mode: 'history',
@@ -20,6 +27,7 @@ const router = new VueRouter({
 });
 
 const vue = new Vue({
+	// data: { loading: false },
   router,
   render: h => h(App)
 }).$mount('#app');

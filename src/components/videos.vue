@@ -1,16 +1,19 @@
 <template>
   <transition appear name="slide-down">
   	<div class="video-container">
-      <transition name="fade">
-        <video v-if="$route.meta.design" class="landing-video design" muted playsinline autoplay src="@/assets/video/design.mp4"></video>
+      <transition name="fade" v-if="$route.meta.design">
+          <video class="landing-video design" muted playsinline autoplay src="@/assets/video/design.mp4" />
       </transition>
-      <transition name="fade">
-        <video v-if="$route.meta.code" class="landing-video code" muted playsinline autoplay src="@/assets/video/code.mp4"></video>
+      <transition name="fade"  v-if="$route.meta.code">
+          <video class="landing-video code" muted playsinline autoplay src="@/assets/video/code.mp4" />
       </transition>
-      <transition name="fade">
-        <video v-if="$route.meta.motion" class="landing-video motion" muted playsinline autoplay src="@/assets/video/motion.mp4"></video>
+      <transition name="fade" v-if="$route.meta.motion">
+          <video class="landing-video motion" muted playsinline autoplay src="@/assets/video/motion.mp4" />
       </transition>
-      <video class="landing-video" muted playsinline autoplay loop src="@/assets/video/home.mp4"></video>
+      <transition name="fade" v-if="$route.meta.about">
+          <video class="landing-video motion" muted playsinline autoplay loop src="@/assets/video/about.mp4" />
+      </transition>
+      <video class="landing-video" muted playsinline autoplay loop src="@/assets/video/home.mp4" />
     </div>
   </transition>
 </template>
@@ -23,7 +26,7 @@
 
 <style scoped lang="scss">
 .video-container {
-  z-index: -1;
+  z-index: -2;
   top: 0;
   position: fixed;
   height: 100vh;
@@ -31,41 +34,13 @@
   align-items: center;
   display: flex;
   .landing-video {
-    z-index: -2;
+    z-index: -3;
     object-fit: fill;
     position: absolute;
     width: 100vw;
     height: 100vh;
     &.motion, &.code, &.design {
-      z-index: -1;
-    }
-  }
-  .link {
-    text-shadow: $textShadow;
-    color: $white;
-    font-weight: bold;
-    letter-spacing: -.01em;
-  }
-  .text {
-    padding: 0 6vw;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    z-index: 1;
-    .link {
-      font-size: 5.3vw;
-      position: relative;
-      // width: $circle;
-      // height: $circle;
-      // border: 1px solid rgba($white, 0.75);
-      background: transparent;
-      // border-radius: calc(#{$circle} / 2);
-      text-shadow: $textShadow;
-      outline: 0;
-      &.magnet {
-        text-decoration: underline;
-      }
+      z-index: -2;
     }
   }
 }

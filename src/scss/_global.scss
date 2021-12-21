@@ -14,10 +14,6 @@ canvas, img, video {
   max-width: unset !important;
   object-fit: unset;
 }
-img {
-  -webkit-user-drag: none;
-  user-drag: none;
-}
 a {
   &:hover {
     text-decoration: none;
@@ -30,176 +26,30 @@ ul {
   margin-inline-end: 0;
   padding-inline-start: 0;
 }
-* { cursor: none; }
-//project layout ---------------------------
-.project-container {
-  width: 80%;
-  max-width: 1600px;
-  margin: auto;
-  * {
-    color: #fff;
-  }
-  .project-landing {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 93vh;
-    font-size: 130px;
-    h1 {
-      font-size: 1em;
-      text-transform: lowercase;
-      letter-spacing: -.02em;
-    }
-    h2 {
-      font-size: .238em;
-      margin: 25px 0;
-    }
-    span, .tasks li:nth-child(1), .roles li:nth-child(1) {
-      @include smallHeaders;
-      display: block;
-      margin-bottom: 40px;
-    }
-    .client-date {
-      display: flex;
-      align-items: center;
-      span span, img {
-        margin-left: 20px;
-        display: inline;
-      }
-      .client {
-        margin-right: 75px;
-        img {
-          width: 60px;
-        }
-      }
-    }
-    hr {
-      margin: 10vh 0 5vh 0;
-    }
-    .project-details {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      .tasks, .roles {
-        width: 20%;
-        li:nth-child(1) {
-
-        }
-      }
-      .description {
-        width: 40%;
-        max-width: 600px;
-      }
-      ul li, p {
-        font-size: 12px;
-        line-height: 27px;
-        font-weight: 600;
-      }
-      ul {
-        padding-left: 0px;
-        list-style: none;
-        li {
-          
-        }
-      }
-    }
-  }
-  .project-body {
-    .pswp__bg {
-      background: #fff !important;
-    }
-    .block {
-      margin-bottom: 120px;
-    }
-    p {
-      @include projectText;
-    }
-    .project-video {
-      video {
-        border-radius: $radius;
-
-        width: 100%;
-      }
-      p {
-        width: 50%;
-        margin-top: 4%;
-      }
-    }
-    .project-image {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      height: 95vh;
-      img {
-        height: 100%;
-        object-fit: cover;
-        width: 70%;
-        border-radius: $radius;
-        transition: .4s $ease;
-        &:hover {
-          @include translate(0,-3px,0);
-          opacity: .95;
-        }
-      }
-      p {
-        width: 25%;
-        margin-bottom: 100px;
-      }
-    }
-  }
+* { 
+  cursor: none;
 }
-
-//vue transitions ---------------------------------------------------------------------
-
-//slide-up ---------------------------
-.text .slide-up-enter-active:nth-of-type(2), .projectLink .slide-up-enter-active:nth-of-type(2) {
-  transition-delay: .3s;
+.project-container.blur {
+  transform: translateZ(0px);
+  perspective: 1000px;
+  filter:blur(5px);
 }
-.text .slide-up-enter-active:nth-of-type(3), .projectLink .slide-up-enter-active:nth-of-type(3) {
-  transition-delay: .6s;
+.fallback {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, transparent), color-stop(0.15, black));
 }
-.slide-up-enter-active, .slide-up-leave-active {
-  transition: 1.3s $ease;
+.menu-expanded .link.design, .projectLink.design .video-underlay {
+  background-image: linear-gradient(303deg, $designDark, $designLight);
 }
-.slide-up-enter {
-  opacity: 0;
-  @include translate(0,5vh,0);
+.menu-expanded .link.code, .projectLink.code .video-underlay {
+  background-image: linear-gradient(135deg, $codeLight, $codeDark);
 }
-.slide-up-leave, .slide-up-leave-to {
-  opacity: 0;
-  @include translate(0,-5vh,0);
-}
-
-//slide-down ---------------------------
-.slide-down-enter-active, .slide-down-leave-active {
-  transition: 1.3s $ease;
-}
-.slide-down-enter {
-  opacity: 0;
-  @include translate(0,-5vh,0);
-}
-.slide-down-leave, .slide-up-leave-to {
-  opacity: 0;
-  @include translate(0,5vh,0);
-}
-
-//fade ---------------------------
-.fade-enter-active, .fade-leave-active {
-  transition: 1s $ease;
-}
-.fade-enter {
-  opacity: 0;
-}
-.fade-leave, .fade-leave-to {
-  opacity: 0;
-}
-
-//menu ---------------------------
-.menu-enter-active, .menu-leave-active {
-  transition: .5s $ease;
-  @include translate(0,0,0);
-}
-.menu-enter, .menu-leave-to {
-  opacity: .5;
-  @include translate(0,-100vh,0);
+.menu-expanded .link.motion, .projectLink.motion .video-underlay  {
+  background-image: linear-gradient(135deg, $motionDark, $motionLight);
 }

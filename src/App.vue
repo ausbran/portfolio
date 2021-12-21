@@ -2,22 +2,27 @@
   <div id="app">
     <navigation />
     <custom-cursor
-      :targets="['a', 'button', 'h1', 'v-photoswipe-thumbnail']"
+      :targets="['a', 'button', 'h1', 'v-photoswipe-thumbnail, .close-container']"
       :circleColor="'#fff'"
       :circleColorHover="'#ddd'"
       :dotColor="'#fff'"
       :dotColorHover="'#ddd'"
       :hoverSize="1.7"
     ></custom-cursor>
+    <!-- <loading v-if="$root.loading"></loading>  commented out - not using the loader right now -->
     <vue-page-transition name="fade">
-      <router-view />
+      <router-view :key="$route.fullPath"/>
     </vue-page-transition>
+    <img class="fallback design" v-if="$route.meta.design" src="@/assets/design-fallback.jpg" alt="">
+    <img class="fallback code" v-if="$route.meta.code" src="@/assets/code-fallback.jpg" alt="">
+    <img class="fallback motion" v-if="$route.meta.motion" src="@/assets/motion-fallback.jpg" alt="">
     <videos />
   </div>
 </template>
 
 <script>
 import navigation from '@/components/navigation.vue'
+// import loading from '@/components/loading.vue'
 import customCursor from '@/components/customCursor.vue'
 import videos from '@/components/videos.vue'
 import UIkit from 'uikit';
@@ -30,6 +35,7 @@ export default {
     navigation,
     videos,
     customCursor
+    // loading
   }
 }
 </script>

@@ -80,30 +80,60 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
   * {
     z-index: 9999;
   }
-}
-.custom-cursor__circle {
-  position: fixed;
-  cursor: none;
-  top: 0;
-  left: 0;
-  width: 50px;
-  height: 50px;
-  border: 1px solid #fff;
-  border-radius: 50%;
-  transform: translate(-100%, -100%);
-  transition: transform 0.4s $ease;
-}
-
-.custom-cursor__dot {
-  position: fixed;
-  cursor: none;
-  top: 1px;
-  left: 1px;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background-color: #fff;
-  transform: translate(-100%, -100%);
-  transition: transform 0.2s $ease;
+  .custom-cursor__circle {
+    position: fixed;
+    cursor: none;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border: 1px solid $white;
+    border-radius: 50%;
+    transform: translate(-100%, -100%);
+    transition: transform 0.4s $ease;
+  }
+  .custom-cursor__dot {
+    position: fixed;
+    cursor: none;
+    top: 1px;
+    left: 1px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: $white;
+    transform: translate(-100%, -100%);
+    transition: transform 0.2s $ease;
+  }
+  // &.x {
+  //   .custom-cursor__circle {
+  //     border: 1px solid $black;
+  //   }
+  //   .custom-cursor__dot{
+  //     background: black;
+  //     height: 20px;
+  //     position: relative;
+  //     width: 1px;
+  //     border-radius: 0;
+  //   }
+  //   .custom-cursor__dot:after {
+  //     background: $black;
+  //     content: "";
+  //     height: 1px;
+  //     left: -10px;
+  //     position: absolute;
+  //     top: 9px;
+  //     width: 21px;
+  //   }
+  // }
+  &.x {
+    .custom-cursor__circle {
+      border: none;
+    }
+    .custom-cursor__dot{
+      background: url('~@/assets/x.svg') no-repeat;
+      width: 20px;
+      height: 20px;
+    }
+  }
 }
 </style>

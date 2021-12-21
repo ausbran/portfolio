@@ -4,7 +4,10 @@
       <router-link :to="name">
         <kinesis-container>
           <kinesis-element :strength="15" type="depth">
-            <div class="text-wrapper">
+            <div class="text-wrapper"
+              @mouseover="hover = true"
+              @mouseleave="hover = false"
+              >
               <p>{{ description }}</p>
               <h1>{{ title }}</h1>
             </div>
@@ -12,8 +15,8 @@
         </kinesis-container>
       </router-link>
       <div class="video-container">
-        <div class="video-overlay"></div>
-        <video :src="require('@/assets/' + name + '/' + video)" autoplay muted playsinline loop></video>
+        <div class="video-underlay"></div>
+        <video :class="{ active: hover }" uk-video="autoplay: inview" :src="require('@/assets/' + name + '/' + video)" muted playsinline loop></video>
       </div>
     </div>
   </transition>
@@ -41,7 +44,7 @@ export default {
     margin: 125px auto;
     position: relative;
     overflow: hidden;
-    &:first-of-type{
+    &:last-of-type{
       .video-overlay {
         display: none !important;
       }
@@ -55,14 +58,6 @@ export default {
       height: 100%;
       position: absolute;
     }
-    .video-overlay {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background: $black;
-      top: 0;
-      left: 0;
-    }
     video {
       opacity: .3;
       object-fit: cover;
@@ -70,6 +65,18 @@ export default {
       min-height: 100%;
       z-index: 0;
       mix-blend-mode: luminosity;
+      transition: .3s ease;
+      &.active {
+        opacity: .9;
+        mix-blend-mode: normal;
+      }
+    }
+    .video-underlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
     a:hover {
       color: #fff;

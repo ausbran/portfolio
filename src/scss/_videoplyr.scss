@@ -1,0 +1,34 @@
+//video player ---------------------------
+.design .plyr {
+  --plyr-color-main: #ef7426;
+}
+.plyr--video {
+  border-radius: $radius;
+  --plyr-font-size-time: 10px;
+  .plyr__controls {
+    * {
+      font-weight: bold;
+    }
+    background: none !important;
+    --plyr-control-spacing: 20px;
+    .plyr__volume {
+      max-width: 150px;
+    }
+    .plyr__progress {
+      margin-right: var(--plyr-range-thumb-height,25px)
+    }
+  }
+  .plyr__control--overlaid {
+    background: transparent !important;
+    display: flex !important;
+    @include flexCenter;
+    svg {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  &.plyr--hide-controls .plyr__controls {
+    -webkit-transform: translateY(10px) !important;
+    transform: translateY(10px) !important;
+  }
+}

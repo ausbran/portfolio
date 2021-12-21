@@ -1,7 +1,10 @@
 import home from '@/components/home.vue';
 import about from '@/components/about.vue';
 import work from '@/components/work.vue';
+import tgrsite from '@/components/tgrsite.vue';
 import farout from '@/components/farout.vue';
+import melvin from '@/components/melvin.vue';
+import breakingthrough from '@/components/breakingthrough.vue';
 import navigation from '@/components/navigation.vue';
 
 const routes = [
@@ -10,7 +13,8 @@ const routes = [
     	name: 'home',
     	component: home,
     	meta: {
-    		home: true
+    		home: true,
+        fromHome: true
     	}
 	  },
     {
@@ -18,7 +22,9 @@ const routes = [
     	name: 'about',
     	component: about,
     	meta: {
-				notHome: true
+		    notHome: true,
+        about: true,
+        fromHome: false
     	}
     },
     {
@@ -26,8 +32,8 @@ const routes = [
     	name: 'design',
     	component: work,
     	meta: {
-				notHome: true,
-        design: true
+		    notHome: true,
+        design: true    
     	}
     },
     {
@@ -35,7 +41,7 @@ const routes = [
     	name: 'code',
     	component: work,
     	meta: {
-				notHome: true,
+			 notHome: true,
         code: true
     	}
     },
@@ -49,12 +55,39 @@ const routes = [
     	},
     },
     {
+      path: '/tgrsite',
+      name: 'tgrsite',
+      component: tgrsite,
+      meta: {
+        notHome: true,
+        design: true
+      }
+    },
+    {
       path: '/farout',
       name: 'farout',
       component: farout,
       meta: {
         notHome: true,
         design: true
+      }
+    },
+    {
+      path: '/melvin',
+      name: 'melvin',
+      component: melvin,
+      meta: {
+        notHome: true,
+        design: true
+      }
+    },
+    {
+      path: '/breakingthrough',
+      name: 'breakingthrough',
+      component: breakingthrough,
+      meta: {
+        notHome: true,
+        code: true
       }
     },
 ];

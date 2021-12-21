@@ -1,103 +1,112 @@
 @font-face {
-    font-family: 'Gilroy';
-    src: url('../assets/fonts/Gilroy-Thin.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Gilroy';
-    src: url('../assets/fonts/Gilroy-UltraLight.woff') format('woff');
-    font-weight: 200;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Gilroy';
-    src: url('../assets/fonts/Gilroy-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Gilroy';
-    src: url('../assets/fonts/Gilroy-Regular.woff') format('woff');
+    font-family: 'F37 Jagger';
+    src: url('../assets/fonts/F37Jagger-RegularItalic.woff') format('woff');
     font-weight: normal;
-    font-style: normal;
+    font-style: italic;
+    font-display: swap;
 }
 @font-face {
-    font-family: 'Gilroy';
-    src: url('../assets/fonts/Gilroy-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Gilroy';
-    src: url('../assets/fonts/Gilroy-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Gilroy';
-    src: url('../assets/fonts/Gilroy-Bold.woff') format('woff');
+    font-family: 'F37 Jagger';
+    src: url('../assets/fonts/F37Jagger-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
-    font-family: 'Gilroy';
-    src: url('../assets/fonts/Gilroy-ExtraBold.woff') format('woff');
-    font-weight: 800;
+    font-family: 'F37 Jagger';
+    src: url('../assets/fonts/F37Jagger-Regular.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
-    font-family: 'Gilroy';
-    src: url('../assets/fonts/Gilroy-Black.woff') format('woff');
-    font-weight: 900;
+    font-family: 'F37 Attila';
+    src: url('../assets/fonts/F37Attila-Medium.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
-
+@font-face {
+    font-family: 'F37 Attila';
+    src: url('../assets/fonts/F37Attila-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'F37 Attila';
+    src: url('../assets/fonts/F37Attila-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'F37 Attila';
+    src: url('../assets/fonts/F37Attila-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'F37 Wicklow';
+    src: url('../assets/fonts/F37Wicklow-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'F37 Wicklow';
+    src: url('../assets/fonts/F37Wicklow-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'F37 Wicklow';
+    src: url('../assets/fonts/F37Wicklow-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 @font-face {
     font-family: '3270';
     src: url('../assets/fonts/3270-Medium 500.ttf') format('truetype');
     font-weight: 500;
 }
-@font-face {
-    font-family: 'F37 Bella Pro Hairline';
-    src: url('../assets/fonts/bella/F37BellaPro-HairlineBoldIt.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'F37 Bella Pro Stencil';
-    src: url('../assets/fonts/bella/F37BellaProStencil-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
 * {
   -webkit-font-smoothing: antialiased;
-  font-family: $gilroy;
+}
+.design {
+    font-family: 'F37 Attila';
+}
+h1.design {
+  font-weight: 600;
 }
 .motion {
-  font-family: 'F37 Bella Pro Stencil';
-  * {
-    font-family: inherit;
-  }
+  font-family: 'F37 Wicklow';
+}
+h1.motion {
+  font-weight: 500;
 }
 .code {
   font-family: '3270';
   * {
     text-transform: lowercase;
     letter-spacing: -.025em;
+  }
+}
+.design, .code, .motion {
+  * {
     font-family: inherit;
   }
 }
-body {
-  font-family: $gilroy;
+p, .project-details ul li {
+  font-family: $base;
+  font-weight: normal;
 }
 h1, p {
   margin: 0;
 }
 h1,h2,h3 {
-    @include bigHeaders;
+  @include bigHeaders;
 }

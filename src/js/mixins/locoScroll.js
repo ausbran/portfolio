@@ -18,7 +18,8 @@ export default {
         el: _self.$refs['scrollSections'],
         smooth: true,
         smoothMobile: true,
-        getDirection: true
+        getDirection: true,
+        direction: 'horizontal'
       });
     }
   }

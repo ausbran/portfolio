@@ -1,0 +1,97 @@
+{
+  "tgrsite": {
+    "name": "tgrsite",
+    "type": "design",
+    "title": "tgr site",
+    "description": "A redesign of Teton Gravity Research’s website",
+    "video": "far-out-trailer.mp4",
+    "date": "2018",
+    "client": "tgr-logo.svg",
+    "overview": "Reimagining the entire structure of TGR's site.",
+    "tasks": [
+        {"task":"web design"},
+        {"task":"prototyping"}
+    ],
+    "roles": [
+        {"role":"ui"},
+        {"role":"ux"},
+        {"role":"animator"}
+    ]
+  },   
+  "farout": {
+    "name": "farout",
+    "type": "design",
+    "title": "far out",
+    "description": "Teton Gravity Research’s 33rd Annual Ski & Snowboard film",
+    "video": "far-out-trailer.mp4",
+    "date": "Winter 2018",
+    "client": "tgr-logo.svg",
+    "awards": "powder film of the year 2018",
+    "overview": "Create a visual interpretation of the film, Far Out. Each film process starts with a movie poster. From that, the project takes life and evolves into an all encompassing campaign - print & digital. From magazine ads to motion graphics, we intended to capture the essence of Far Out.",
+    "tasks": [
+        {"task":"movie poster"},
+        {"task":"film branding system"},
+        {"task":"motion graphics"},
+        {"task":"web design"},
+        {"task":"digital series development"},
+        {"task":"print and digital ads"}
+    ],
+    "roles": [
+        {"role":"print"},
+        {"role":"ui"},
+        {"role":"ux"},
+        {"role":"front end dev"},
+        {"role":"animator"}
+    ]
+  },
+  "breakingthrough": {
+    "name": "breakingthrough",
+    "type": "code",
+    "title": "breaking through",
+    "description": "A digital series featuring six female athletes at the top of the action sports world",
+    "video": "far-out-trailer.mp4",
+    "date": "Winter 2018",
+    "client": "tgr-logo.svg",
+    "awards": "powder film of the year 2018",
+    "overview": "Create a visual interpretation of the film, Far Out. Each film process starts with a movie poster. From that, the project takes life and evolves into an all encompassing campaign - print & digital. From magazine ads to motion graphics, we intended to capture the essence of Far Out.",
+    "tasks": [
+        {"task":"movie poster"},
+        {"task":"film branding system"},
+        {"task":"motion graphics"},
+        {"task":"web design"},
+        {"task":"digital series development"},
+        {"task":"print and digital ads"}
+    ],
+    "roles": [
+        {"role":"print"},
+        {"role":"ui"},
+        {"role":"ux"},
+        {"role":"front end dev"},
+        {"role":"animator"}
+    ]
+  },
+  "journeyreward": {
+    "name": "journeyreward",
+    "type": "motion",
+    "title": "journey > reward",
+    "description": "A digital series featuring six female athletes at the top of the action sports world",
+    "video": "far-out-trailer.mp4"
+  },
+  "melvin": {
+    "name": "melvin",
+    "type": "design",
+    "title": "experimental series",
+    "description": "melvin beers here",
+    "video": "melvin-experimental.mp4",
+    "date": "Fall 2019 - Now",
+    "client": "tgr-logo.svg",
+    "overview": "Some text about Melvin",
+    "tasks": [
+        {"task":"packaging"}
+    ],
+    "roles": [
+        {"role":"print"},
+        {"role":"prepress"}
+    ]
+  }
+}

@@ -9,7 +9,7 @@
 
 <script>
 import projectLink from './projectLink';
-import json from '@/json/projectLink.json';
+import json from '@/json/projects.json';
 import $ from 'jquery'
 export default {
   name: 'work',
@@ -19,24 +19,36 @@ export default {
   beforeCreate() {
     var path = location.pathname.slice(1);
     this.$nextTick(function () {
-      if (path === 'design') {
+      if (path === 'design')
         $('.motion, .code').remove();
-      }
-      if (path === 'code') {
+    
+      if (path === 'code') 
         $('.motion, .design').remove();
-      }
-      if (path === 'motion') {
-        $('.design, .code').remove();
-      }
+      
+      if (path === 'motion') 
+        $('.code, .design').remove();
     });
   },
+  beforeRouteEnter (to, from, next) {
+    if(from.matched.some(route => route.meta.fromHome)){
+      next(vm => {
+        console.log('hide fallback')
+        $('.fallback').hide();
+      })
+    } else {
+      next(vm => {
+        console.log('show fallback')
+        $('.fallback').show();
+      })
+    }
+  },
   data() {
-      return {
-        projects: Object.values(json),
-      };
+    return {
+      projects: Object.values(json),
+    };
   },
   components: {
-      projectLink,
-  },
+    projectLink,
+  }
 };
 </script>
