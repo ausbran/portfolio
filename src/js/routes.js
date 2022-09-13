@@ -1,6 +1,6 @@
 import home from '@/components/home.vue';
 import about from '@/components/about.vue';
-import work from '@/components/work.vue';
+import projects from '@/components/projects.vue';
 import tgrsite from '@/components/tgrsite.vue';
 import farout from '@/components/farout.vue';
 import melvin from '@/components/melvin.vue';
@@ -30,7 +30,7 @@ const routes = [
     {
     	path: '/design',
     	name: 'design',
-    	component: work,
+    	component: projects,
     	meta: {
 		    notHome: true,
         design: true    
@@ -39,7 +39,7 @@ const routes = [
     {
     	path: '/code',
     	name: 'code',
-    	component: work,
+    	component: projects,
     	meta: {
 			 notHome: true,
         code: true
@@ -48,7 +48,7 @@ const routes = [
     {
     	path: '/motion',
     	name: 'motion',
-    	component: work,
+    	component: projects,
     	meta: {
   			notHome: true,
   			motion: true

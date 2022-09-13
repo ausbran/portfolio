@@ -65,3 +65,14 @@
   @include scale(1.05);
   transition: 1s;
 }
+
+//line ---------------------------
+.line-enter-active, .line-leave-active {
+  transition: 2s $ease;
+  opacity: 1;
+  width: 100%;
+}
+.line-enter, .line-leave-to  {
+  opacity: 0;
+  width: 0;
+}

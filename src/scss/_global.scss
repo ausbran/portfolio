@@ -10,10 +10,7 @@
   visibility: hidden !important;
   opacity: 0 !important;
 }
-canvas, img, video {
-  max-width: unset !important;
-  object-fit: unset;
-}
+
 a {
   &:hover {
     text-decoration: none;
@@ -52,4 +49,8 @@ ul {
 }
 .menu-expanded .link.motion, .projectLink.motion .video-underlay  {
   background-image: linear-gradient(135deg, $motionDark, $motionLight);
+}
+.active {
+  opacity: 1 !important;
+  visibility: visible !important;
 }

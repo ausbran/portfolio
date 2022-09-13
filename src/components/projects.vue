@@ -12,7 +12,7 @@ import projectLink from './projectLink';
 import json from '@/json/projects.json';
 import $ from 'jquery'
 export default {
-  name: 'work',
+  name: 'projects',
   props: {
       name: String,
   },

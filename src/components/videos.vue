@@ -34,6 +34,7 @@
   align-items: center;
   display: flex;
   .landing-video {
+    transition: .5s ease;
     z-index: -3;
     object-fit: fill;
     position: absolute;

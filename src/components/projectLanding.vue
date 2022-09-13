@@ -6,7 +6,9 @@
       <span class="client">Client<img :src="require('@/assets/' + name + '/' + client)" alt=""></span>
       <span class="date">Date<span>{{ date }}</span></span>
     </div>
-    <hr>
+    <transition appear name="line">
+      <hr>
+    </transition>
     <span class="awards">{{ awards }}</span>
     <div class="project-details">
       <ul class="tasks">
