@@ -56,29 +56,20 @@ export default {
           img: 'tgrsite-film-mock.jpg'
         },
         { desktopVid: true,
-          title: 'Film Page',
-          desc: 'A landing point for all film specific info, content and tour stops.',
+          title: 'About Page',
+          desc: 'Second description text goes here and tells about project.',
           vid: 'tgrsite-film-proto.mp4',
           img: 'tgrsite-film-mock.jpg'
         },
         { desktopImg: true,
-          title: 'Film Page',
-          desc: 'A landing point for all film specific info, content and tour stops.',
+          title: 'Post Page',
+          desc: 'Third description text goes here and tells about project.',
           vid: 'tgrsite-film-proto.mp4',
           img: 'tgrsite-film-mock.jpg'
         }
       ]
     }
   },
-  // provide: {
-  //   name: 'tgrsite',
-  //   blocks: [
-  //       {
-  //         vid: 'tgrsite-film-proto.mp4',
-  //         img: '/tgrsite-film-mock.jpg'
-  //       }
-  //     ]
-  // },
   provide() {
     return {
       name: this.name,
