@@ -1,24 +1,24 @@
 .links {
-    padding: 0 6vw;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    z-index: 1;
-    .link {
-      font-size: 5.3vw;
-      line-height: 1.2em;
-      position: relative;
-      background: transparent;
-      text-shadow: $textShadow;
-      outline: 0;
-      color: $white;
-      letter-spacing: -.01em;
-      &.magnet {
-        text-decoration: underline;
-      }
+  padding: 0 6vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  z-index: 1;
+  .link {
+    font-size: 5.3vw;
+    line-height: 1.2em;
+    position: relative;
+    background: transparent;
+    text-shadow: $textShadow;
+    outline: 0;
+    color: $white;
+    letter-spacing: -.01em;
+    &.magnet {
+      text-decoration: underline;
     }
   }
+}
 nav {
   z-index: 999;
   position: fixed;
@@ -27,43 +27,37 @@ nav {
   width: 100vw;
   text-align: center;
   .menu {
+    width: fit-content;
     position: absolute;
     margin: auto;
     left: 0;
     right: 0;
-    top: 15px;
+    top: 23px;
     color: $white;
     letter-spacing: -.01em;
     display: inline-block;
     transition: .28s $ease;
+    z-index: 10;
     @include translate(0,0,0);
     &:hover {
-      opacity: .9;
-      @include scale(.95);
-    }
-    &.close {
-      color: $black;
+      opacity: .7;
+      @include scale(.97);
     }
     &.hide {
       opacity: 0;
       transition: .5s ease;
       @include translate(0,1vh,0);
     }
+    &.about {
+      bottom: 23px;
+      top: unset;
+    }
   }
   ul {
-    display: flex;
-    justify-content: center;
     list-style: none;
-  }
-  .close-container {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
   }
   .menu-expanded {
     z-index: 999;
-    background: white;
     width: 100vw;
     height: 100vh;
     right: 0;
@@ -76,9 +70,13 @@ nav {
     align-items: center;
     justify-content: space-evenly;
     overflow: hidden;
-    .link {
-      background-clip: text;
-      color: transparent;
+    video {
+      position: absolute;
+      width: 100vw;
+      height: 165vh;
+      -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, transparent), color-stop(.4, black));
+      top: 0;
+      object-fit: unset;
     }
   }
 }

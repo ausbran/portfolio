@@ -14,16 +14,9 @@ module.exports = {
           @import "@/scss/_videoplyr.scss";
           @import "@/scss/_projects.scss";
           @import "@/scss/_navigation.scss";
+          @import "@/scss/_about.scss";
         `
       }
     }
-  },
-  // commenting out this loader, was trying to iterate svg files in json for client logos
-  // chainWebpack: config => {
-  //   config.module
-  //     .rule('html')
-  //     .test(/\.html$/)
-  //     .use('html-loader')
-  //     .loader('html-loader')
-  // }
+  }
 };

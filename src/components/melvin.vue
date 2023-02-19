@@ -1,70 +1,38 @@
 <template>
   <transition appear name="slide-up">
-  <div ref="scrollSections">
-      <section data-scroll-section class="project-container design">
-        <projectLanding
-        v-for="project in projects"
-        v-bind="project"/>
-        <div class="project-body">
-          <div class="block project-image">
-              <img v-preview:scope-a src="@/assets/farout/far-out-poster.jpg" alt="">
-            <p>14x24 poster. Went slim on width to strengthen compositional constraints. Some text here to talk about the poster a bit.</p>
-          </div>
-          <div class="block project-video">
-              <vue-plyr :options="options">
-                <video
-                  crossorigin
-                  playsinline
-                  autoplay
-                  muted
-                  loop
-                >
-                  <source
-                    size="1080"
-                    src="@/assets/farout/far-out-trailer.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </vue-plyr>
-            <p>14x24 poster. Went slim on width to strengthen compositional constraints. Some text here to talk about the poster a bit.</p>
-          </div>
-          <div class="block project-image">
-              <img v-preview:scope-a src="@/assets/farout/far-out-poster.jpg" alt="">
-            <p>14x24 poster. Went slim on width to strengthen compositional constraints. Some text here to talk about the poster a bit.</p>
-          </div>
-        </div>
-      </section>
-  </div>
+    <projectInner
+      :projects="projects"
+      :blocks="blocks"
+      :type="type"
+      :name="name"/>
   </transition>
 </template>
 
 <script>
-import locoScroll from '@/js/mixins/locoScroll'
-import photoSwipe from '@/js/mixins/photoSwipe'
-import projectLanding from './projectLanding'
+import projectInner from './projectInner'
+import projectProvide from '@/js/mixins/projectProvide'
 import json from '@/json/projects.json'
-import $ from 'jquery'
 export default {
   name: "melvin",
-  mixins: [locoScroll, photoSwipe],
+  mixins: [projectProvide],
   components: {
-    projectLanding
+    projectInner
   },
   data() {
     return {
       projects: Object.values(json).filter(x => x.name == 'melvin'),
+      name: 'melvin',
+      type: 'design',
+      show: false,
+      mock: false,
+      blocks: [
+        { desktopVid: true,
+          title: 'Film Page',
+          desc: 'A landing point for all film specific info, content and tour stops.',
+          vid: 'melvin.mp4',
+        }
+      ]
     }
-  },
-  beforeCreate() {
-    this.$nextTick(function () {
-      if ($(".awards").text().length == 0) {
-        $('.awards').remove();
-      }   
-    });
-  },
+  }
 };
 </script>
-
-<style lang="scss">
-template{}
-</style>

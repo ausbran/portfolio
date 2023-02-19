@@ -23,11 +23,11 @@
 }
 .slide-down-enter {
   opacity: 0;
-  @include translate(0,-5vh,0);
+  @include translate(0,-3vh,0);
 }
 .slide-down-leave, .slide-down-leave-to {
   opacity: 0;
-  @include translate(0,1vh,0);
+  @include translate(0,2vh,0);
 }
 
 //slide-down-close for navigation link ---------------------------
@@ -41,6 +41,19 @@
 .slide-down-close-leave, .slide-down-close-leave-to {
   opacity: 0;
   @include translate(0,1vh,0);
+}
+
+//slide-up-close for navigation link ---------------------------
+.slide-up-close-enter-active, .slide-up-close-leave-active {
+  transition: 1.3s $ease;
+}
+.slide-up-close-enter {
+  opacity: 0;
+  @include translate(0,1vh,0);
+}
+.slide-up-close-leave, .slide-up-close-leave-to {
+  opacity: 0;
+  @include translate(0,-1vh,0);
 }
 
 //fade ---------------------------
@@ -75,4 +88,15 @@
 .line-enter, .line-leave-to  {
   opacity: 0;
   width: 0;
+}
+
+//video ---------------------------
+.video-enter-active, .video-leave-active {
+  transition: height 3s $ease, opacity 2s $ease;
+  height: 165vh;
+  opacity: 1;
+}
+.video-enter, .video-leave-to  {
+  height: 10vh !important;
+  opacity: 0;
 }

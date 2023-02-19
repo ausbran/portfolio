@@ -1,47 +1,37 @@
 <template>
   <transition appear name="slide-up">
-    <div class="project-container">
-      <projectLanding
-        v-for="project in projects"
-        v-bind="project"/>
-
-      <section id="sectionPin">
-        <div class="pin-wrap">
-          <h2>Text goes here.</h2>
-          <img v-preview:scope-a src="@/assets/farout/far-out-poster.jpg" alt="">
-          <vue-plyr>
-            <div class="plyr__video-embed">
-              <iframe
-                src="https://www.youtube.com/embed/28x9EQOxhSs?amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-                allowfullscreen
-                allowtransparency
-                allow="autoplay"
-              ></iframe>
-            </div>
-          </vue-plyr>
-          <img v-preview:scope-a src="@/assets/farout/far-out-poster.jpg" alt="">
-        </div>
-      </section>
-  </div>
-
- 
+    <projectInner
+      :projects="projects"
+      :blocks="blocks"
+      :type="type"
+      :name="name"/>
   </transition>
 </template>
 
 <script>
-import projectLanding from './projectLanding'
+import projectInner from './projectInner'
+import projectProvide from '@/js/mixins/projectProvide'
 import json from '@/json/projects.json'
-import photoSwipe from '@/js/mixins/photoSwipe'
-import gsapScroll from '@/js/mixins/gsapScroll'
 export default {
   name: "farout",
-  mixins: [photoSwipe, gsapScroll],
+  mixins: [projectProvide],
   components: {
-    projectLanding
+    projectInner
   },
   data() {
     return {
       projects: Object.values(json).filter(x => x.name == 'farout'),
+      name: 'farout',
+      type: 'design',
+      show: false,
+      mock: false,
+      blocks: [
+        { desktopVid: true,
+          title: 'Film Page',
+          desc: 'A landing point for all film specific info, content and tour stops.',
+          vid: 'farout.mp4',
+        }
+      ]
     }
   }
 };

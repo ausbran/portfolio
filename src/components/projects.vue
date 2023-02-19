@@ -1,10 +1,10 @@
 <template>
-    <div>
-      <projectLink
-        v-for="project in projects"
-        v-bind="project"
-      />
-    </div>
+  <div class="projectLinks">
+    <projectLink
+      v-for="project in projects"
+      v-bind="project"
+    />
+  </div>
 </template>
 
 <script>
@@ -13,6 +13,9 @@ import json from '@/json/projects.json';
 import $ from 'jquery'
 export default {
   name: 'projects',
+  components: {
+    projectLink,
+  },
   props: {
       name: String,
   },
@@ -46,9 +49,14 @@ export default {
     return {
       projects: Object.values(json),
     };
-  },
-  components: {
-    projectLink,
   }
 };
 </script>
+
+
+<!-- need to figure this out somehow to fix scrolling when going back / state change -->
+<style scoped>
+  .has-scroll-smooth body, html.has-scroll-smooth {
+    overflow: scroll !important;
+  }
+</style>

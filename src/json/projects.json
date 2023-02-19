@@ -4,7 +4,6 @@
     "type": "design",
     "title": "tgr site",
     "description": "A redesign of Teton Gravity Research’s website",
-    "video": "far-out-trailer.mp4",
     "date": "2018",
     "client": "tgr-logo.svg",
     "overview": "Reimagining the entire structure of TGR's site.",
@@ -17,13 +16,148 @@
         {"role":"ux"},
         {"role":"animator"}
     ]
-  },   
+  }, 
+  "united": {
+    "name": "united",
+    "type": "design",
+    "title": "united by blue site",
+    "description": "ubb sustainability description",
+    "date": "Spring 2022",
+    "client": "united-logo.svg",
+    "overview": "ubb overview decription here",
+    "tasks": [
+        {"task":"web design"},
+        {"task":"front end development"},
+        {"task":"prototyping"}
+    ],
+    "roles": [
+        {"role":"ui"},
+        {"role":"ux"},
+        {"role":"front end dev"}
+    ]
+  },
+  "bode": {
+    "name": "bode",
+    "type": "design",
+    "title": "bode miller site",
+    "description": "Design and developmnent of Olympic Skier Bode Miller's website",
+    "date": "Summer 2019",
+    "client": "bode-logo.svg",
+    "overview": "Reimagining the entire structure of TGR's site.",
+    "tasks": [
+        {"task":"web design"},
+        {"task":"front end development"},
+        {"task":"prototyping"}
+    ],
+    "roles": [
+        {"role":"ui"},
+        {"role":"ux"},
+        {"role":"animator"}
+    ]
+  }, 
+  "breakingthrough": {
+    "name": "breakingthrough",
+    "type": "design",
+    "title": "breaking through",
+    "description": "A digital series featuring six female athletes at the top of the action sports world",
+    "date": "Winter 2018",
+    "client": "rei-logo.svg",
+    "awards": "powder film of the year 2018",
+    "overview": "Create a visual interpretation of the film, Far Out. Each film process starts with a movie poster. From that, the project takes life and evolves into an all encompassing campaign - print & digital. From magazine ads to motion graphics, we intended to capture the essence of Far Out.",
+    "tasks": [
+        {"task":"movie poster"},
+        {"task":"film branding system"},
+        {"task":"motion graphics"},
+        {"task":"web design"},
+        {"task":"digital series development"},
+        {"task":"print and digital ads"}
+    ],
+    "roles": [
+        {"role":"print"},
+        {"role":"ui"},
+        {"role":"ux"},
+        {"role":"front end dev"},
+        {"role":"animator"}
+    ]
+  },
+  "approach": {
+    "name": "approach",
+    "type": "motion",
+    "title": "the approach",
+    "description": "approach description",
+    "date": "Fall 2021",
+    "client": "northface-logo.svg",
+    "overview": "approach overview decription here",
+    "tasks": [
+        {"task":"web design"},
+        {"task":"front end development"},
+        {"task":"prototyping"}
+    ],
+    "roles": [
+        {"role":"ui"},
+        {"role":"ux"},
+        {"role":"front end dev"}
+    ]
+  },
+  "journey": {
+    "name": "journey",
+    "type": "motion",
+    "title": "journey > reward",
+    "description": "Jeremy Jones & Selema Masekela discuss sports, the environment and social justice",
+    "date": "Fall 2020",
+    "client": "sierra-logo.svg",
+    "overview": "Some text about Jourey > Reward",
+    "tasks": [
+        {"task":"packaging"}
+    ],
+    "roles": [
+        {"role":"print"},
+        {"role":"prepress"}
+    ]
+  },
+  "revive": {
+    "name": "revive",
+    "type": "design",
+    "title": "revive site",
+    "description": "Design and developmnent of Revive's website",
+    "date": "Spring 2021",
+    "client": "revive-logo.svg",
+    "overview": "Reimagining the entire structure of Revive's site.",
+    "tasks": [
+        {"task":"web design"},
+        {"task":"front end development"},
+        {"task":"prototyping"}
+    ],
+    "roles": [
+        {"role":"ui"},
+        {"role":"ux"},
+        {"role":"front end dev"}
+    ]
+  }, 
+  "evoke": {
+    "name": "evoke",
+    "type": "design",
+    "title": "evoke site",
+    "description": "Design and partial developmnent of Evoke's website",
+    "date": "Summer 2021",
+    "client": "evoke-logo.svg",
+    "overview": "Reimagining the entire structure of Evoke's site.",
+    "tasks": [
+        {"task":"web design"},
+        {"task":"front end development"},
+        {"task":"prototyping"}
+    ],
+    "roles": [
+        {"role":"ui"},
+        {"role":"ux"},
+        {"role":"front end dev"}
+    ]
+  },
   "farout": {
     "name": "farout",
     "type": "design",
     "title": "far out",
-    "description": "Teton Gravity Research’s 33rd Annual Ski & Snowboard film",
-    "video": "far-out-trailer.mp4",
+    "description": "Teton Gravity Research’s 23rd Annual Ski & Snowboard film",
     "date": "Winter 2018",
     "client": "tgr-logo.svg",
     "awards": "powder film of the year 2018",
@@ -44,16 +178,38 @@
         {"role":"animator"}
     ]
   },
-  "breakingthrough": {
-    "name": "breakingthrough",
-    "type": "code",
-    "title": "breaking through",
-    "description": "A digital series featuring six female athletes at the top of the action sports world",
-    "video": "far-out-trailer.mp4",
-    "date": "Winter 2018",
+  "rogue": {
+    "name": "rogue",
+    "type": "design",
+    "title": "rogue elements",
+    "description": "Teton Gravity Research’s 22nd Annual Ski & Snowboard film",
+    "date": "Winter 2017",
     "client": "tgr-logo.svg",
-    "awards": "powder film of the year 2018",
-    "overview": "Create a visual interpretation of the film, Far Out. Each film process starts with a movie poster. From that, the project takes life and evolves into an all encompassing campaign - print & digital. From magazine ads to motion graphics, we intended to capture the essence of Far Out.",
+    "overview": "Create a visual interpretation of the film, Rogue Elements. Each film process starts with a movie poster. From that, the project takes life and evolves into an all encompassing campaign - print & digital. From magazine ads to motion graphics, we intended to capture the essence of Rogue Elements.",
+    "tasks": [
+        {"task":"movie poster"},
+        {"task":"film branding system"},
+        {"task":"motion graphics"},
+        {"task":"web design"},
+        {"task":"digital series development"},
+        {"task":"print and digital ads"}
+    ],
+    "roles": [
+        {"role":"print"},
+        {"role":"ui"},
+        {"role":"ux"},
+        {"role":"front end dev"},
+        {"role":"animator"}
+    ]
+  }, 
+  "winterland": {
+    "name": "winterland",
+    "type": "design",
+    "title": "winterland",
+    "description": "Teton Gravity Research’s 24th Annual Ski & Snowboard film",
+    "date": "Winter 2019",
+    "client": "tgr-logo.svg",
+    "overview": "Create a visual interpretation of the film, Winterland.",
     "tasks": [
         {"task":"movie poster"},
         {"task":"film branding system"},
@@ -70,21 +226,61 @@
         {"role":"animator"}
     ]
   },
-  "journeyreward": {
-    "name": "journeyreward",
+  "makebelieve": {
+    "name": "makebelieve",
     "type": "motion",
-    "title": "journey > reward",
-    "description": "A digital series featuring six female athletes at the top of the action sports world",
-    "video": "far-out-trailer.mp4"
+    "title": "make believe",
+    "description": "Teton Gravity Research’s 25th Annual Ski & Snowboard film",
+    "date": "Winter 2020",
+    "client": "tgr-logo.svg",
+    "overview": "Create a visual interpretation of the film, Make Believe.",
+    "tasks": [
+        {"task":"movie poster"},
+        {"task":"film branding system"},
+        {"task":"motion graphics"},
+        {"task":"web design"},
+        {"task":"digital series development"},
+        {"task":"print and digital ads"}
+    ],
+    "roles": [
+        {"role":"print"},
+        {"role":"ui"},
+        {"role":"ux"},
+        {"role":"front end dev"},
+        {"role":"animator"}
+    ]
   },
+  "accomplice": {
+    "name": "accomplice",
+    "type": "motion",
+    "title": "accomplice",
+    "description": "A mountain bike film directed by Jeremy Grant",
+    "date": "Spring 2021",
+    "client": "tgr-logo.svg",
+    "overview": "Create a visual interpretation of the film, Accomplice.",
+    "tasks": [
+        {"task":"movie poster"},
+        {"task":"film branding system"},
+        {"task":"motion graphics"},
+        {"task":"web design"},
+        {"task":"digital series development"},
+        {"task":"print and digital ads"}
+    ],
+    "roles": [
+        {"role":"print"},
+        {"role":"ui"},
+        {"role":"ux"},
+        {"role":"front end dev"},
+        {"role":"animator"}
+    ]
+  }, 
   "melvin": {
     "name": "melvin",
     "type": "design",
     "title": "experimental series",
     "description": "melvin beers here",
-    "video": "melvin-experimental.mp4",
     "date": "Fall 2019 - Now",
-    "client": "tgr-logo.svg",
+    "client": "melvin-logo.svg",
     "overview": "Some text about Melvin",
     "tasks": [
         {"task":"packaging"}

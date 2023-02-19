@@ -3,13 +3,16 @@
     <h1>{{ title }}</h1>
     <h2>{{ description }}</h2>
     <div class="client-date">
-      <span class="client">Client<img :src="require('@/assets/' + name + '/' + client)" alt=""></span>
+      <span class="client">Client<img :class="name" :src="require('@/assets/logos/' + client)" alt=""></span>
       <span class="date">Date<span>{{ date }}</span></span>
     </div>
     <transition appear name="line">
       <hr>
     </transition>
-    <span class="awards">{{ awards }}</span>
+    <span class="awards"
+      v-if='awards'>
+      {{ awards }}
+    </span>
     <div class="project-details">
       <ul class="tasks">
         <span>Tasks</span>
@@ -28,6 +31,9 @@
         <p>{{ overview }}</p>
       </div>
     </div>
+    <video
+      :src="require('@/assets/' + name + '/' + name + '.mp4')"
+      autoplay muted playsinline loop />
   </div>
 </template>
 
@@ -47,8 +53,3 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-template{}
-</style>

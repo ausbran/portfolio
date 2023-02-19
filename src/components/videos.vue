@@ -1,5 +1,5 @@
 <template>
-  <transition appear name="slide-down">
+  <transition mode="out-in" appear name="slide-down">
   	<div class="video-container">
       <transition name="fade" v-if="$route.meta.design">
           <video class="landing-video design" muted playsinline autoplay src="@/assets/video/design.mp4" />
@@ -11,7 +11,8 @@
           <video class="landing-video motion" muted playsinline autoplay src="@/assets/video/motion.mp4" />
       </transition>
       <transition name="fade" v-if="$route.meta.about">
-          <video class="landing-video motion" muted playsinline autoplay loop src="@/assets/video/about.mp4" />
+          <video class="landing-video about" muted playsinline autoplay loop src="@/assets/video/about.mp4" />
+          <video class="landing-video" muted playsinline autoplay loop src="@/assets/video/home.mp4" />
       </transition>
       <video class="landing-video" muted playsinline autoplay loop src="@/assets/video/home.mp4" />
     </div>

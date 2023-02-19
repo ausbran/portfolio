@@ -36,7 +36,7 @@ export default {
       let pinWrapWidth = pinWrap.offsetWidth;
       let horizontalScrollLength = pinWrapWidth - window.innerWidth;
 
-      gsap.to(".pin-container", {
+      gsap.to(pinWrap, {
         scrollTrigger: {
           scroller: pageContainer, //locomotive-scroll
           scrub: true,
@@ -49,6 +49,19 @@ export default {
         x: -horizontalScrollLength,
         ease: "none"
       });
+
+      // trying to figure out disable scroll on cat pages
+      // let removeScroll = () => content.style.overflow = "visible"
+
+      // ScrollTrigger.addEventListener("refresh", () => {
+      //   var path = location.pathname.slice(1);
+      //   if (path == 'design' || path == 'code' || path == 'motion') {
+      //     removeScroll();
+      //     requestAnimationFrame(removeScroll);
+      //   } else {
+      //     scroller.update()
+      //   }
+      // })
 
       ScrollTrigger.addEventListener("refresh", () => scroller.update()); //locomotive-scroll
 

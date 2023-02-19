@@ -30,6 +30,7 @@
     "vue-draggabilly": "^1.1.0",
     "vue-draggable-resizable": "^2.3.0",
     "vue-kinesis": "^1.2.3",
+    "vue-lazyload": "^3.0.0-rc.2",
     "vue-page-transition": "^0.2.2",
     "vue-photoswipe-directive": "^0.1.3",
     "vue-plyr": "^7.0.0",

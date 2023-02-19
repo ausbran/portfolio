@@ -85,7 +85,7 @@ h1.design {
 .motion {
   font-family: 'F37 Wicklow';
 }
-h1.motion {
+h1.motion, h1.code {
   font-weight: 500;
 }
 .code {
@@ -95,18 +95,31 @@ h1.motion {
     letter-spacing: -.025em;
   }
 }
+.motion {
+    h1, h2 {
+      font-weight: normal !important;
+      letter-spacing: 0 !important;
+    }
+    p {
+      letter-spacing: 0 !important;
+    }
+}
 .design, .code, .motion {
   * {
     font-family: inherit;
   }
 }
-p, .project-details ul li {
+.menu, p, .project-details ul li {
   font-family: $base;
   font-weight: normal;
+}
+.menu {
+    font-weight: bold;
 }
 h1, p {
   margin: 0;
 }
-h1,h2,h3 {
+h1,h2,h3, h4, h5, h6 {
+    margin: unset;
   @include bigHeaders;
 }

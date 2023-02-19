@@ -104,36 +104,5 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
     transform: translate(-100%, -100%);
     transition: transform 0.2s $ease;
   }
-  // &.x {
-  //   .custom-cursor__circle {
-  //     border: 1px solid $black;
-  //   }
-  //   .custom-cursor__dot{
-  //     background: black;
-  //     height: 20px;
-  //     position: relative;
-  //     width: 1px;
-  //     border-radius: 0;
-  //   }
-  //   .custom-cursor__dot:after {
-  //     background: $black;
-  //     content: "";
-  //     height: 1px;
-  //     left: -10px;
-  //     position: absolute;
-  //     top: 9px;
-  //     width: 21px;
-  //   }
-  // }
-  &.x {
-    .custom-cursor__circle {
-      border: none;
-    }
-    .custom-cursor__dot{
-      background: url('~@/assets/x.svg') no-repeat;
-      width: 20px;
-      height: 20px;
-    }
-  }
 }
 </style>

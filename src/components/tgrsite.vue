@@ -1,45 +1,22 @@
 <template>
   <transition appear name="slide-up">
-    <div class="project-container" :class="type">
-      <projectLanding
-        v-for="project in projects"
-        v-bind="project"/>
-
-      <section id="pin">
-        <div class="pin-container">
-
-          <projectBlock
-            v-for="block in blocks"
-            :desc="block.desc"
-            :title="block.title"
-            :vid="block.vid"
-            :img="block.img"
-            :desktopToggle="block.desktopToggle"
-            :desktopVid="block.desktopVid"
-            :desktopImg="block.desktopImg"
-            :name="name" />
-
-        </div>
-      </section>
-
-    </div>
+    <projectInner
+      :projects="projects"
+      :blocks="blocks"
+      :type="type"
+      :name="name"/>
   </transition>
 </template>
 
 <script>
-import projectBlock from './projectBlock'
-import projectLanding from './projectLanding'
-import photoSwipe from '@/js/mixins/photoSwipe'
-import gsapScroll from '@/js/mixins/gsapScroll'
-import draggable from '@/js/mixins/draggable'
+import projectInner from './projectInner'
+import projectProvide from '@/js/mixins/projectProvide'
 import json from '@/json/projects.json'
-import $ from 'jquery'
 export default {
   name: "tgrsite",
-  mixins: [photoSwipe, gsapScroll, draggable],
+  mixins: [projectProvide],
   components: {
-    projectLanding,
-    projectBlock
+    projectInner
   },
   data() {
     return {
@@ -49,33 +26,50 @@ export default {
       show: false,
       mock: false,
       blocks: [
-        { desktopToggle: true,
+        { desktopVid: true,
+          title: 'TGRtv',
+          desc: 'An immersive video content experience.',
+          vid: 'tgrsite-tv-desktop.mp4'
+        },
+        { desktopVid: true,
+          title: 'The Stash',
+          desc: 'An immersive video content experience.',
+          vid: 'tgrsite-stash.mp4'
+        },
+        { desktopVid: true,
+          title: 'Tour',
+          desc: 'An immersive video content experience.',
+          vid: 'tgrsite-tour.mp4'
+        },
+        { desktopVid: true,
+          title: 'All Films',
+          desc: 'An immersive video content experience.',
+          vid: 'tgrsite-films.mp4'
+        },
+        { desktopAndMobile: true,
           title: 'Film Page',
           desc: 'A landing point for all film specific info, content and tour stops.',
-          vid: 'tgrsite-film-proto.mp4',
-          img: 'tgrsite-film-mock.jpg'
+          vid1: 'tgrsite-film-desktop.mp4',
+          img2: 'tgrsite-film-mobile.jpg'
+        },
+        { desktopAndMobile: true,
+          title: 'Category Page',
+          desc: 'A landing point for all film specific info, content and tour stops.',
+          vid1: 'tgrsite-category-desktop.mp4',
+          vid2: 'tgrsite-category-mobile.mp4'
         },
         { desktopVid: true,
           title: 'About Page',
           desc: 'Second description text goes here and tells about project.',
-          vid: 'tgrsite-film-proto.mp4',
-          img: 'tgrsite-film-mock.jpg'
+          vid: 'tgrsite-post.mp4'
         },
-        { desktopImg: true,
-          title: 'Post Page',
-          desc: 'Third description text goes here and tells about project.',
-          vid: 'tgrsite-film-proto.mp4',
-          img: 'tgrsite-film-mock.jpg'
-        }
+        { desktopToggle: true,
+          title: 'Film Page',
+          desc: 'A landing point for all film specific info, content and tour stops.',
+          vid: 'tgrsite-film-desktop.mp4',
+          img: 'tgrsite-film-desktop.jpg'
+        },
       ]
-    }
-  },
-  provide() {
-    return {
-      name: this.name,
-      title: 'hello',
-      vid: this.blocks[0].vid,
-      blocks: this.blocks[0].vid
     }
   }
 };
