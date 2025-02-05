@@ -35,12 +35,10 @@ export default {
   beforeRouteEnter (to, from, next) {
     if(from.matched.some(route => route.meta.fromHome)){
       next(vm => {
-        console.log('hide fallback')
         $('.fallback').hide();
       })
     } else {
       next(vm => {
-        console.log('show fallback')
         $('.fallback').show();
       })
     }

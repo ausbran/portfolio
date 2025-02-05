@@ -22,7 +22,9 @@
             :img1="block.img1"
             :img2="block.img2"
             :vid1="block.vid1"
-            :vid2="block.vid2"/>
+            :vid2="block.vid2"
+            :quote="block.quote"
+            :quoteText="block.quoteText"/>
         </div>
       </section>
 
@@ -33,14 +35,12 @@
 <script>
 import projectBlock from './projectBlock'
 import projectLanding from './projectLanding'
-import photoSwipe from '@/js/mixins/photoSwipe'
 import gsapScroll from '@/js/mixins/gsapScroll'
 import draggable from '@/js/mixins/draggable'
-import $ from 'jquery'
 export default {
   name: "projectInner",
   inject: ['name', 'type', 'projects', 'blocks'],
-  mixins: [photoSwipe, gsapScroll, draggable],
+  mixins: [gsapScroll, draggable],
   components: {
     projectLanding,
     projectBlock

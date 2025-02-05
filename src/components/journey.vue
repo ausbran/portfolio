@@ -26,26 +26,15 @@ export default {
       show: false,
       mock: false,
       blocks: [
-        { desktopToggle: true,
-          title: 'Film Page',
-          desc: 'A landing point for all film specific info, content and tour stops.',
-          vid: 'tgrsite-film-proto.mp4',
-          img: 'tgrsite-film-mock.jpg'
-        },
-        { mobileImg: true,
-          title: 'Film Page Mobile',
-          desc: 'A landing point for all film specific info, content and tour stops.',
-          img: 'tgrsite-film-mobile.jpg'
-        },
         { desktopVid: true,
-          title: 'About Page',
-          desc: 'Second description text goes here and tells about project.',
-          vid: 'tgrsite-post.mp4'
+          title: 'Episode 1',
+          desc: 'The first content piece in the series',
+          vid: 'tgrsite-tv-desktop.mp4'
         },
         { desktopImg: true,
-          title: 'Post Page',
-          desc: 'Third description text goes here and tells about project.',
-          img: 'tgrsite-film-mock.jpg'
+          title: 'Ad Units',
+          desc: 'Set of ads for the TGR website to promote the series launch.',
+          img: 'journey-ads.jpg'
         }
       ]
     }

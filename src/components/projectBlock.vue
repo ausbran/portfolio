@@ -3,11 +3,11 @@
 
     <template v-if="desktopToggle">  
       <article class="project-block desktopToggle">
-        <div class="project-block-inner">
+        <div class="project-block-inner drag">
           <video
             class="project-video"
             :src="require('@/assets/' + name + '/' + vid)"
-            autoplay muted playsinline loop />
+            preload="auto" muted playsinline loop />
             <div
               class="project-image"
               @click="toggle()">
@@ -28,10 +28,19 @@
     <template v-if="desktopVid">  
       <article class="project-block">
         <div class="project-block-inner">
-          <video
+          <!-- <video
             class="project-video"
             :src="require('@/assets/' + name + '/' + vid)"
-            autoplay muted playsinline loop />
+            preload="auto" muted playsinline loop /> -->
+            <vue-plyr class="project-video" :options="options">
+              <video
+              autoplay
+                crossorigin
+                playsinline
+                :src="require('@/assets/' + name + '/' + vid)"
+              >
+              </video>
+            </vue-plyr>
         </div>
          <aside>
           <h2>{{title}}</h2>
@@ -42,7 +51,7 @@
 
     <template v-if="desktopImg">  
       <article class="project-block desktopImg">
-        <div class="project-block-inner">
+        <div class="project-block-inner drag">
           <div class="project-image">
             <img
               class="draggable"
@@ -59,7 +68,7 @@
 
     <template v-if="mobileImg">  
       <article class="project-block mobileImg">
-        <div class="project-block-inner">
+        <div class="project-block-inner drag">
           <div class="project-image">
             <img
               class="draggable"
@@ -76,36 +85,62 @@
 
     <template v-if="desktopAndMobile">  
       <article class="project-block desktopAndMobile">
-        <div class="project-block-inner">
-          <div class="project-image">
+        <div class="project-block-inner drag">
+          <div v-if="img1" class="project-image">
             <img
-              v-if="img1"
               class="draggable"
               :src="require('@/assets/' + name + '/' + img1)"
               alt="">
-            <video
-              v-if="vid1"
-              class="project-video"
-              :src="require('@/assets/' + name + '/' + vid1)"
-              autoplay muted playsinline loop />
           </div>
-          <div class="project-image" :vid2="'fa-home'">
+          <!-- <video
+            v-if="vid1"
+            class="project-video"
+            :src="require('@/assets/' + name + '/' + vid1)"
+            preload="auto" muted playsinline loop /> -->
+            <vue-plyr class="project-video" :options="options">
+              <video
+              v-if="vid1"
+              autoplay
+                controls
+                crossorigin
+                playsinline
+                :src="require('@/assets/' + name + '/' + vid1)"
+              >
+              </video>
+            </vue-plyr>
+          <div v-if="img2" class="project-image">
             <img
-              v-if="img2"
               class="draggable"
               :src="require('@/assets/' + name + '/' + img2)"
               alt="">
-              <video
+            </div>
+              <!-- <video
               v-if="vid2"
               class="project-video"
               :src="require('@/assets/' + name + '/' + vid2)"
-              autoplay muted playsinline loop />
-          </div>
+              muted playsinline loop preload="auto"/> -->
+              <vue-plyr class="project-video" :options="options">
+              <video
+              v-if="vid2"
+              autoplay
+                controls
+                crossorigin
+                playsinline
+                :src="require('@/assets/' + name + '/' + vid2)"
+              >
+              </video>
+            </vue-plyr>
         </div>
         <aside>
           <h2>{{title}}</h2>
           <p>{{desc}}</p>
         </aside>
+      </article>
+    </template>
+
+    <template v-if="quote">  
+      <article class="project-block quote">
+          <blockquote>{{quoteText}}</blockquote>
       </article>
     </template>
 
@@ -137,7 +172,10 @@ export default {
     img1: String,
     img2: String,
     vid1: String,
-    vid2: String
+    vid2: String,
+    // props for quote block
+    quote: Boolean,
+    quoteText: String
   },
   methods: {
     toggle(value) {
@@ -154,13 +192,17 @@ export default {
   },
   mounted() {
     function matchHeight() {
+       setTimeout(() => {
+      
       var height = $('.project-video').height();
+    }, "500")
+      console.log(height)
       $('.project-block-inner').height(height)
     }
     setTimeout(() => {
       matchHeight();
     }, "200")
-
+    
     var resized = true;
     var timeout = null;
     var refresh = function(){

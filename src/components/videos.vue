@@ -1,22 +1,19 @@
 <template>
-  <transition mode="out-in" appear name="slide-down">
-  	<div class="video-container">
-      <transition name="fade" v-if="$route.meta.design">
-          <video class="landing-video design" muted playsinline autoplay src="@/assets/video/design.mp4" />
-      </transition>
-      <transition name="fade"  v-if="$route.meta.code">
-          <video class="landing-video code" muted playsinline autoplay src="@/assets/video/code.mp4" />
-      </transition>
-      <transition name="fade" v-if="$route.meta.motion">
-          <video class="landing-video motion" muted playsinline autoplay src="@/assets/video/motion.mp4" />
-      </transition>
-      <transition name="fade" v-if="$route.meta.about">
-          <video class="landing-video about" muted playsinline autoplay loop src="@/assets/video/about.mp4" />
-          <video class="landing-video" muted playsinline autoplay loop src="@/assets/video/home.mp4" />
-      </transition>
-      <video class="landing-video" muted playsinline autoplay loop src="@/assets/video/home.mp4" />
-    </div>
-  </transition>
+	<div class="video-container">
+    <transition appear name="fade" v-if="$route.meta.design">
+        <video class="landing-video design" muted playsinline autoplay src="@/assets/video/design.mp4" />
+    </transition>
+    <transition appear name="fade"  v-if="$route.meta.code">
+        <video class="landing-video code" muted playsinline autoplay src="@/assets/video/code.mp4" />
+    </transition>
+    <transition appear name="fade" v-if="$route.meta.motion">
+        <video class="landing-video motion" muted playsinline autoplay src="@/assets/video/motion.mp4" />
+    </transition>
+    <transition appear name="fade" v-if="$route.meta.about">
+        <video class="landing-video about" muted playsinline autoplay loop src="@/assets/video/about.mp4" />
+    </transition>
+    <video class="landing-video" muted playsinline autoplay loop src="@/assets/video/home.mp4" />
+  </div>
 </template>
 
 <script>
@@ -24,26 +21,3 @@
     name: 'videos',
   }
 </script>
-
-<style scoped lang="scss">
-.video-container {
-  z-index: -2;
-  top: 0;
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  align-items: center;
-  display: flex;
-  .landing-video {
-    transition: .5s ease;
-    z-index: -3;
-    object-fit: fill;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    &.motion, &.code, &.design {
-      z-index: -2;
-    }
-  }
-}
-</style>

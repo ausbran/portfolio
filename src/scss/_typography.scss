@@ -1,125 +1,138 @@
 @font-face {
-    font-family: 'F37 Jagger';
-    src: url('../assets/fonts/F37Jagger-RegularItalic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
+  font-family: "F37 Jagger";
+  src: url("../assets/fonts/F37Jagger-RegularItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'F37 Jagger';
-    src: url('../assets/fonts/F37Jagger-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: "F37 Jagger";
+  src: url("../assets/fonts/F37Jagger-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'F37 Jagger';
-    src: url('../assets/fonts/F37Jagger-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "F37 Jagger";
+  src: url("../assets/fonts/F37Jagger-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'F37 Attila';
-    src: url('../assets/fonts/F37Attila-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: "F37 Attila";
+  src: url("../assets/fonts/F37Attila-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'F37 Attila';
-    src: url('../assets/fonts/F37Attila-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+  font-family: "F37 Attila";
+  src: url("../assets/fonts/F37Attila-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'F37 Attila';
-    src: url('../assets/fonts/F37Attila-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "F37 Attila";
+  src: url("../assets/fonts/F37Attila-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'F37 Attila';
-    src: url('../assets/fonts/F37Attila-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: "F37 Attila";
+  src: url("../assets/fonts/F37Attila-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'F37 Wicklow';
-    src: url('../assets/fonts/F37Wicklow-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: "F37 Wicklow";
+  src: url("../assets/fonts/F37Wicklow-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'F37 Wicklow';
-    src: url('../assets/fonts/F37Wicklow-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: "F37 Wicklow";
+  src: url("../assets/fonts/F37Wicklow-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'F37 Wicklow';
-    src: url('../assets/fonts/F37Wicklow-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "F37 Wicklow";
+  src: url("../assets/fonts/F37Wicklow-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: '3270';
-    src: url('../assets/fonts/3270-Medium 500.ttf') format('truetype');
-    font-weight: 500;
+  font-family: "3270";
+  src: url("../assets/fonts/3270-Medium 500.ttf") format("truetype");
+  font-weight: 500;
 }
 * {
   -webkit-font-smoothing: antialiased;
+  font-family: $base;
 }
 .design {
-    font-family: 'F37 Attila';
+  font-family: "F37 Attila";
 }
 h1.design {
   font-weight: 600;
 }
 .motion {
-  font-family: 'F37 Wicklow';
+  font-family: "F37 Wicklow";
 }
-h1.motion, h1.code {
+h1.motion,
+h1.code {
   font-weight: 500;
 }
 .code {
-  font-family: '3270';
+  font-family: "3270";
   * {
     text-transform: lowercase;
-    letter-spacing: -.025em;
+    letter-spacing: -0.025em;
   }
 }
 .motion {
-    h1, h2 {
-      font-weight: normal !important;
-      letter-spacing: 0 !important;
-    }
-    p {
-      letter-spacing: 0 !important;
-    }
+  h1,
+  h2 {
+    font-weight: normal !important;
+    letter-spacing: 0 !important;
+  }
+  p {
+    letter-spacing: 0 !important;
+  }
 }
-.design, .code, .motion {
+.design,
+.code,
+.motion {
   * {
     font-family: inherit;
   }
 }
-.menu, p, .project-details ul li {
+.menu,
+p,
+.project-details ul li {
   font-family: $base;
   font-weight: normal;
 }
 .menu {
-    font-weight: bold;
+  font-weight: bold;
 }
-h1, p {
+h1,
+p {
   margin: 0;
 }
-h1,h2,h3, h4, h5, h6 {
-    margin: unset;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: unset;
   @include bigHeaders;
 }

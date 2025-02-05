@@ -1,17 +1,20 @@
 <template>
   <div id="landing-container">
-      <navigationLinks />
+    <!-- <navigationLinks /> -->
+    <about />
   </div>
 </template>
 
 <script>
-  import navigationLinks from './navigationLinks' 
-  export default {
-    name: 'home',
-    components: {
-      navigationLinks
-    }
-  }
+import navigationLinks from "./navigationLinks";
+import about from "./about";
+export default {
+  name: "home",
+  components: {
+    navigationLinks,
+    about,
+  },
+};
 </script>
 
 <style scoped lang="scss">

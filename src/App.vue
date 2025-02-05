@@ -10,26 +10,41 @@
       :hoverSize="1.7"
     ></custom-cursor>
     <vue-page-transition name="fade">
-      <router-view :key="$route.fullPath"/>
+      <router-view :key="$route.fullPath" />
     </vue-page-transition>
-    <img class="fallback design" v-if="$route.meta.design" src="@/assets/assets/design-fallback.jpg" alt="">
-    <img class="fallback code" v-if="$route.meta.code" src="@/assets/assets/code-fallback.jpg" alt="">
-    <img class="fallback motion" v-if="$route.meta.motion" src="@/assets/assets/motion-fallback.jpg" alt="">
+    <img
+      class="fallback design"
+      v-if="$route.meta.design"
+      src="@/assets/general/design-fallback.jpg"
+      alt=""
+    />
+    <img
+      class="fallback code"
+      v-if="$route.meta.code"
+      src="@/assets/general/code-fallback.jpg"
+      alt=""
+    />
+    <img
+      class="fallback motion"
+      v-if="$route.meta.motion"
+      src="@/assets/general/motion-fallback.jpg"
+      alt=""
+    />
     <videos />
   </div>
 </template>
 
 <script>
-import navigation from '@/components/navigation.vue'
-import customCursor from '@/components/customCursor.vue'
-import videos from '@/components/videos.vue'
+import navigation from "@/components/navigation.vue";
+import customCursor from "@/components/customCursor.vue";
+import videos from "@/components/videos.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     navigation,
     videos,
-    customCursor
-  }
-}
+    customCursor,
+  },
+};
 </script>

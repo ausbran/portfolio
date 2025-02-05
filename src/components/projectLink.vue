@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import $ from 'jquery'
 export default {
   name: 'projectLink',
   props: {
@@ -47,11 +46,6 @@ export default {
     return {
       hover: false
     }
-  },
-  mounted() {
-    $('.projectLink a').each(function() {
-      var height = $(this).height;
-    });
   }
 }
 </script>

@@ -26,6 +26,12 @@ export default {
       show: false,
       mock: false,
       blocks: [
+        { desktopImg: true,
+          title: 'Film Page',
+          desc: 'A landing point for all film specific info, content and tour stops.',
+          vid: 'tgrsite-film-desktop.mp4',
+          img: 'tgrsite-film-desktop.webp'
+        },
         { desktopVid: true,
           title: 'TGRtv',
           desc: 'An immersive video content experience.',
@@ -41,6 +47,9 @@ export default {
           desc: 'An immersive video content experience.',
           vid: 'tgrsite-tour.mp4'
         },
+        { quote: true,
+          quoteText: 'Some amaing quote about the project goes here. Telling us all about how awesome the whole project is.'
+        },
         { desktopVid: true,
           title: 'All Films',
           desc: 'An immersive video content experience.',
@@ -50,7 +59,7 @@ export default {
           title: 'Film Page',
           desc: 'A landing point for all film specific info, content and tour stops.',
           vid1: 'tgrsite-film-desktop.mp4',
-          img2: 'tgrsite-film-mobile.jpg'
+          img2: 'tgrsite-film-mobile.webp'
         },
         { desktopAndMobile: true,
           title: 'Category Page',
@@ -62,13 +71,7 @@ export default {
           title: 'About Page',
           desc: 'Second description text goes here and tells about project.',
           vid: 'tgrsite-post.mp4'
-        },
-        { desktopToggle: true,
-          title: 'Film Page',
-          desc: 'A landing point for all film specific info, content and tour stops.',
-          vid: 'tgrsite-film-desktop.mp4',
-          img: 'tgrsite-film-desktop.jpg'
-        },
+        }
       ]
     }
   }
