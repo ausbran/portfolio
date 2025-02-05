@@ -1,7 +1,6 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/portfolio/dist/'
-    : '/',
+  publicPath: process.env.NODE_ENV === "production" ? "/" : "/",
+  outputDir: "public_html",
   css: {
     loaderOptions: {
       sass: {
@@ -15,8 +14,8 @@ module.exports = {
           @import "@/scss/_projects.scss";
           @import "@/scss/_navigation.scss";
           @import "@/scss/_about.scss";
-        `
-      }
-    }
-  }
+        `,
+      },
+    },
+  },
 };
