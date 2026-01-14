@@ -46,13 +46,7 @@
             </transition>
             <navigationLinks />
             <transition appear name="video">
-              <video
-                muted
-                playsinline
-                autoplay
-                loop
-                src="@/assets/video/home.mp4"
-              />
+              <Asset :asset="siteVideos.home" />
             </transition>
           </ul>
         </transition>
@@ -62,16 +56,20 @@
 </template>
 
 <script>
-import navigationLinks from "./navigationLinks";
+import Asset from '@/components/Asset.vue';
+import { siteVideos } from '@/data/siteMedia';
+import navigationLinks from "./navigationLinks.vue";
 export default {
   name: "navigation",
   data() {
     return {
       toggleNav: true,
       hide: false,
+      siteVideos
     };
   },
   components: {
+    Asset,
     navigationLinks,
   },
 };

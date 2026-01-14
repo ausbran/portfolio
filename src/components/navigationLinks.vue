@@ -33,8 +33,15 @@
 </template>
 
 <script>
+import KinesisContainer from "@/components/KinesisContainer.vue";
+import KinesisElement from "@/components/KinesisElement.vue";
+
 export default {
   name: 'navigationLinks',
+  components: {
+    KinesisContainer,
+    KinesisElement
+  },
   props: {
       name: String,
   }

@@ -2,20 +2,19 @@
   <component
     :is="resolvedComponent"
     :block="block"
-    :projectSlug="projectSlug"
   />
 </template>
 
 <script>
-import BlockEmbed from '@/components/blocks/BlockEmbed';
-import BlockGallery from '@/components/blocks/BlockGallery';
-import BlockImage from '@/components/blocks/BlockImage';
-import BlockQuote from '@/components/blocks/BlockQuote';
-import BlockSplit from '@/components/blocks/BlockSplit';
-import BlockText from '@/components/blocks/BlockText';
-import BlockToggle from '@/components/blocks/BlockToggle';
-import BlockUnknown from '@/components/blocks/BlockUnknown';
-import BlockVideo from '@/components/blocks/BlockVideo';
+import BlockEmbed from '@/components/blocks/BlockEmbed.vue';
+import BlockGallery from '@/components/blocks/BlockGallery.vue';
+import BlockImage from '@/components/blocks/BlockImage.vue';
+import BlockQuote from '@/components/blocks/BlockQuote.vue';
+import BlockSplit from '@/components/blocks/BlockSplit.vue';
+import BlockText from '@/components/blocks/BlockText.vue';
+import BlockToggle from '@/components/blocks/BlockToggle.vue';
+import BlockUnknown from '@/components/blocks/BlockUnknown.vue';
+import BlockVideo from '@/components/blocks/BlockVideo.vue';
 
 const blockRegistry = {
   video: BlockVideo,
@@ -33,10 +32,6 @@ export default {
   props: {
     block: {
       type: Object,
-      required: true
-    },
-    projectSlug: {
-      type: String,
       required: true
     }
   },

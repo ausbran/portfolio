@@ -67,6 +67,9 @@ export default {
   },
   mounted() {
     window.addEventListener("mousemove", this.customCursor);
+  },
+  beforeUnmount() {
+    window.removeEventListener("mousemove", this.customCursor);
   }
 };
 </script>

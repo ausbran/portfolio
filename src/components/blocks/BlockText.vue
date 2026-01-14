@@ -15,10 +15,6 @@ export default {
     block: {
       type: Object,
       required: true
-    },
-    projectSlug: {
-      type: String,
-      required: true
     }
   }
 };

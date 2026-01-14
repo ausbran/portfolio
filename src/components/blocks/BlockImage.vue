@@ -2,11 +2,7 @@
   <article class="project-block block-image" :class="layoutClass">
     <div class="project-block-inner drag">
       <div class="project-image">
-        <img
-          class="draggable"
-          :src="assetUrl(block.media)"
-          :alt="block.media && block.media.alt ? block.media.alt : ''"
-        >
+        <Asset class="draggable" :asset="block.media" />
       </div>
     </div>
     <aside v-if="hasMeta">
@@ -17,17 +13,16 @@
 </template>
 
 <script>
-import { resolveAssetUrl } from '@/js/utils/media';
+import Asset from '@/components/Asset.vue';
 
 export default {
   name: 'BlockImage',
+  components: {
+    Asset
+  },
   props: {
     block: {
       type: Object,
-      required: true
-    },
-    projectSlug: {
-      type: String,
       required: true
     }
   },
@@ -37,11 +32,6 @@ export default {
     },
     layoutClass() {
       return this.block.layout ? `layout-${this.block.layout}` : '';
-    }
-  },
-  methods: {
-    assetUrl(media) {
-      return resolveAssetUrl(this.projectSlug, media);
     }
   }
 };

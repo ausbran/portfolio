@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import navigationLinks from "./navigationLinks";
+import navigationLinks from "./navigationLinks.vue";
 export default {
   name: "home",
   components: {

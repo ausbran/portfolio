@@ -12,6 +12,7 @@
         :clientName="project.clientName"
         :awards="project.awards"
         :overview="project.overview"
+        :hero="project.hero"
       />
 
       <section v-if="project.blocks && project.blocks.length" id="pin">
@@ -20,7 +21,6 @@
             v-for="(block, index) in project.blocks"
             :key="block.id || `${project.slug}-${index}`"
             :block="block"
-            :projectSlug="project.slug"
           />
         </div>
       </section>
@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import ProjectBlock from './projectBlock';
-import ProjectLanding from './projectLanding';
+import ProjectBlock from './projectBlock.vue';
+import ProjectLanding from './projectLanding.vue';
 import gsapScroll from '@/js/mixins/gsapScroll';
 import draggable from '@/js/mixins/draggable';
 import { getProjectBySlug } from '@/data/projects';

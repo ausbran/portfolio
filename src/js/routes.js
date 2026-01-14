@@ -2,6 +2,7 @@ import home from '@/components/home.vue';
 import about from '@/components/about.vue';
 import projects from '@/components/projects.vue';
 import ProjectPage from '@/components/projectPage.vue';
+import ProjectGalleryDemo from '@/components/ProjectGalleryDemo.vue';
 import { projects as projectData } from '@/data/projects';
 
 const projectRoutes = projectData.map((project) => ({
@@ -53,13 +54,21 @@ const routes = [
     	}
     },
     {
-    	path: '/motion',
-    	name: 'motion',
-    	component: projects,
-    	meta: {
+      path: '/motion',
+      name: 'motion',
+      component: projects,
+      meta: {
   			notHome: true,
   			motion: true
-    	},
+      },
+    },
+    {
+      path: '/demo/gallery',
+      name: 'demo-gallery',
+      component: ProjectGalleryDemo,
+      meta: {
+        notHome: true
+      }
     },
     ...projectRoutes,
 ];

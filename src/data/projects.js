@@ -1,3 +1,52 @@
+const ratios = {
+  landscape: 16 / 9,
+  portrait: 9 / 16,
+  poster: 2 / 3,
+  square: 1
+};
+
+const imageAsset = (src, options = {}) => ({
+  type: 'image',
+  src,
+  ...options
+});
+
+const videoAsset = (src, options = {}) => ({
+  type: 'video',
+  src,
+  ...options
+});
+
+const projectImage = (slug, src, options = {}) =>
+  imageAsset(src, {
+    assetRoot: slug,
+    aspect: ratios.landscape,
+    ...options
+  });
+
+const projectVideo = (slug, src, options = {}) =>
+  videoAsset(src, {
+    assetRoot: slug,
+    aspect: ratios.landscape,
+    ...options
+  });
+
+const projectHero = (slug, options = {}) =>
+  projectVideo(slug, `${slug}.mp4`, options);
+
+const projectPreview = (slug, options = {}) =>
+  projectVideo(slug, `${slug}.mp4`, {
+    autoplay: false,
+    ...options
+  });
+
+const logoAsset = (src, options = {}) =>
+  imageAsset(src, {
+    assetRoot: 'logos',
+    responsive: false,
+    ...options
+  });
+
 const projects = [
   {
     slug: 'tgrsite',
@@ -5,11 +54,13 @@ const projects = [
     title: 'tgr site',
     description: "A redesign of Teton Gravity Research's website",
     date: '2018',
-    clientLogo: 'tgr-logo.svg',
+    clientLogo: logoAsset('tgr-logo.svg'),
     clientName: 'Teton Gravity Research',
     overview: "Reimagining the entire structure of TGR's site.",
     tasks: ['web design', 'prototyping'],
     roles: ['ui', 'ux', 'animator'],
+    hero: projectHero('tgrsite'),
+    preview: projectPreview('tgrsite'),
     blocks: [
       {
         type: 'text',
@@ -21,25 +72,25 @@ const projects = [
         type: 'image',
         title: 'Film Page',
         description: 'A landing point for film specific info, content, and tour stops.',
-        media: { type: 'image', src: 'tgrsite-film-desktop.webp' }
+        media: projectImage('tgrsite', 'tgrsite-film-desktop.webp')
       },
       {
         type: 'video',
         title: 'TGRtv',
         description: 'An immersive video content experience.',
-        media: { type: 'video', src: 'tgrsite-tv-desktop.mp4' }
+        media: projectVideo('tgrsite', 'tgrsite-tv-desktop.mp4')
       },
       {
         type: 'video',
         title: 'The Stash',
         description: 'An immersive video content experience.',
-        media: { type: 'video', src: 'tgrsite-stash.mp4' }
+        media: projectVideo('tgrsite', 'tgrsite-stash.mp4')
       },
       {
         type: 'video',
         title: 'Tour',
         description: 'An immersive video content experience.',
-        media: { type: 'video', src: 'tgrsite-tour.mp4' }
+        media: projectVideo('tgrsite', 'tgrsite-tour.mp4')
       },
       {
         type: 'quote',
@@ -49,27 +100,31 @@ const projects = [
         type: 'video',
         title: 'All Films',
         description: 'An immersive video content experience.',
-        media: { type: 'video', src: 'tgrsite-films.mp4' }
+        media: projectVideo('tgrsite', 'tgrsite-films.mp4')
       },
       {
         type: 'split',
         title: 'Film Page',
         description: 'A landing point for film specific info, content, and tour stops.',
-        primary: { type: 'video', src: 'tgrsite-film-desktop.mp4' },
-        secondary: { type: 'image', src: 'tgrsite-film-mobile.webp' }
+        primary: projectVideo('tgrsite', 'tgrsite-film-desktop.mp4'),
+        secondary: projectImage('tgrsite', 'tgrsite-film-mobile.webp', {
+          aspect: ratios.portrait
+        })
       },
       {
         type: 'split',
         title: 'Category Page',
         description: 'A landing point for film specific info, content, and tour stops.',
-        primary: { type: 'video', src: 'tgrsite-category-desktop.mp4' },
-        secondary: { type: 'video', src: 'tgrsite-category-mobile.mp4' }
+        primary: projectVideo('tgrsite', 'tgrsite-category-desktop.mp4'),
+        secondary: projectVideo('tgrsite', 'tgrsite-category-mobile.mp4', {
+          aspect: ratios.portrait
+        })
       },
       {
         type: 'video',
         title: 'About Page',
         description: 'Second description text goes here and tells about project.',
-        media: { type: 'video', src: 'tgrsite-post.mp4' }
+        media: projectVideo('tgrsite', 'tgrsite-post.mp4')
       }
     ]
   },
@@ -79,17 +134,19 @@ const projects = [
     title: 'united by blue site',
     description: 'ubb sustainability description',
     date: 'Spring 2022',
-    clientLogo: 'united-logo.svg',
+    clientLogo: logoAsset('united-logo.svg'),
     clientName: 'United By Blue',
     overview: 'ubb overview description here',
     tasks: ['web design', 'front end development', 'prototyping'],
     roles: ['ui', 'ux', 'front end dev'],
+    hero: projectHero('united'),
+    preview: projectPreview('united'),
     blocks: [
       {
         type: 'video',
         title: 'Site Preview',
         description: 'A landing point for all brand and product content.',
-        media: { type: 'video', src: 'united.mp4' }
+        media: projectVideo('united', 'united.mp4')
       }
     ]
   },
@@ -99,26 +156,28 @@ const projects = [
     title: 'bode miller site',
     description: "Design and development of Olympic skier Bode Miller's website",
     date: 'Summer 2019',
-    clientLogo: 'bode-logo.svg',
+    clientLogo: logoAsset('bode-logo.svg'),
     clientName: 'Bode Miller',
     overview: "Reimagining the entire structure of Bode Miller's site.",
     tasks: ['web design', 'front end development', 'prototyping'],
     roles: ['ui', 'ux', 'animator'],
+    hero: projectHero('bode'),
+    preview: projectPreview('bode'),
     blocks: [
       {
         type: 'toggle',
         title: 'Whole Site',
         description: 'A landing point for all film specific info, content, and tour stops.',
         media: {
-          video: { type: 'video', src: 'bode-home.mp4' },
-          image: { type: 'image', src: 'bode-home.jpg' }
+          video: projectVideo('bode', 'bode-home.mp4'),
+          image: projectImage('bode', 'bode-home.jpg')
         }
       },
       {
         type: 'text',
         eyebrow: 'Design Notes',
         title: 'Performance with editorial feel',
-        body: 'Large typography and minimal UI reinforce Bode\'s personal brand.'
+        body: "Large typography and minimal UI reinforce Bode's personal brand."
       }
     ]
   },
@@ -128,7 +187,7 @@ const projects = [
     title: 'breaking through',
     description: 'A digital series featuring six female athletes at the top of the action sports world',
     date: 'Winter 2018',
-    clientLogo: 'rei-logo.svg',
+    clientLogo: logoAsset('rei-logo.svg'),
     clientName: 'REI',
     awards: 'Powder film of the year 2018',
     overview: 'Create a visual interpretation of the film, Far Out.',
@@ -141,12 +200,14 @@ const projects = [
       'print and digital ads'
     ],
     roles: ['print', 'ui', 'ux', 'front end dev', 'animator'],
+    hero: projectHero('breakingthrough'),
+    preview: projectPreview('breakingthrough'),
     blocks: [
       {
         type: 'video',
         title: 'Series Trailer',
         description: 'A quick look at the series tone and visual language.',
-        media: { type: 'video', src: 'breakingthrough.mp4' }
+        media: projectVideo('breakingthrough', 'breakingthrough.mp4')
       },
       {
         type: 'embed',
@@ -162,17 +223,19 @@ const projects = [
     title: 'the approach',
     description: 'approach description',
     date: 'Fall 2021',
-    clientLogo: 'northface-logo.svg',
+    clientLogo: logoAsset('northface-logo.svg'),
     clientName: 'The North Face',
     overview: 'approach overview description here',
     tasks: ['web design', 'front end development', 'prototyping'],
     roles: ['ui', 'ux', 'front end dev'],
+    hero: projectHero('approach'),
+    preview: projectPreview('approach'),
     blocks: [
       {
         type: 'video',
         title: 'Film Page',
         description: 'A landing point for all film specific info, content, and tour stops.',
-        media: { type: 'video', src: 'approach.mp4' }
+        media: projectVideo('approach', 'approach.mp4')
       }
     ]
   },
@@ -182,23 +245,25 @@ const projects = [
     title: 'journey > reward',
     description: 'Jeremy Jones and Selema Masekela discuss sports, the environment, and social justice',
     date: 'Fall 2020',
-    clientLogo: 'sierra-logo.svg',
+    clientLogo: logoAsset('sierra-logo.svg'),
     clientName: 'Sierra',
     overview: 'The Journey Is Greater Than the Reward aims to have an honest discussion.',
     tasks: ['packaging'],
     roles: ['print', 'prepress'],
+    hero: projectHero('journey'),
+    preview: projectPreview('journey'),
     blocks: [
       {
         type: 'video',
         title: 'Episode 1',
         description: 'The first content piece in the series.',
-        media: { type: 'video', src: 'journey.mp4' }
+        media: projectVideo('journey', 'journey.mp4')
       },
       {
         type: 'image',
         title: 'Ad Units',
         description: 'Set of ads for the TGR website to promote the series launch.',
-        media: { type: 'image', src: 'journey-ads.jpg' }
+        media: projectImage('journey', 'journey-ads.jpg')
       }
     ]
   },
@@ -208,11 +273,13 @@ const projects = [
     title: 'revive site',
     description: "Design and development of Revive's website",
     date: 'Spring 2021',
-    clientLogo: 'revive-logo.svg',
+    clientLogo: logoAsset('revive-logo.svg'),
     clientName: 'Revive',
     overview: "Reimagining the entire structure of Revive's site.",
     tasks: ['web design', 'front end development', 'prototyping'],
     roles: ['ui', 'ux', 'front end dev'],
+    hero: projectHero('revive'),
+    preview: projectPreview('revive'),
     blocks: [
       {
         type: 'text',
@@ -224,7 +291,7 @@ const projects = [
         type: 'video',
         title: 'Home Page',
         description: 'Combining the Revive branding mark with subtle product animation and video texture.',
-        media: { type: 'video', src: 'revive-home-1920px.mp4' }
+        media: projectVideo('revive', 'revive-home-1920px.mp4')
       }
     ]
   },
@@ -234,17 +301,19 @@ const projects = [
     title: 'evoke site',
     description: "Design and partial development of Evoke's website",
     date: 'Summer 2021',
-    clientLogo: 'evoke-logo.svg',
+    clientLogo: logoAsset('evoke-logo.svg'),
     clientName: 'Evoke',
     overview: "Reimagining the entire structure of Evoke's site.",
     tasks: ['web design', 'front end development', 'prototyping'],
     roles: ['ui', 'ux', 'front end dev'],
+    hero: projectHero('evoke'),
+    preview: projectPreview('evoke'),
     blocks: [
       {
         type: 'video',
         title: 'Site Preview',
         description: 'A landing point for all film specific info, content, and tour stops.',
-        media: { type: 'video', src: 'evoke.mp4' }
+        media: projectVideo('evoke', 'evoke.mp4')
       }
     ]
   },
@@ -254,7 +323,7 @@ const projects = [
     title: 'far out',
     description: "Teton Gravity Research's 23rd annual ski and snowboard film",
     date: 'Winter 2018',
-    clientLogo: 'tgr-logo.svg',
+    clientLogo: logoAsset('tgr-logo.svg'),
     clientName: 'Teton Gravity Research',
     awards: 'Powder film of the year 2018',
     overview: 'Create a visual interpretation of the film, Far Out.',
@@ -267,21 +336,25 @@ const projects = [
       'print and digital ads'
     ],
     roles: ['print', 'ui', 'ux', 'front end dev', 'animator'],
+    hero: projectHero('farout'),
+    preview: projectPreview('farout'),
     blocks: [
       {
         type: 'gallery',
         title: 'Print System',
         description: 'Poster and editorial imagery from the campaign.',
         images: [
-          { type: 'image', src: 'far-out-poster.jpg' },
-          { type: 'image', src: 'far-out-image1.jpeg' }
+          projectImage('farout', 'far-out-poster.jpg', {
+            aspect: ratios.poster
+          }),
+          projectImage('farout', 'far-out-image1.jpeg')
         ]
       },
       {
         type: 'video',
         title: 'Film Page',
         description: 'A landing point for all film specific info, content, and tour stops.',
-        media: { type: 'video', src: 'farout.mp4' }
+        media: projectVideo('farout', 'farout.mp4')
       }
     ]
   },
@@ -291,7 +364,7 @@ const projects = [
     title: 'rogue elements',
     description: "Teton Gravity Research's 22nd annual ski and snowboard film",
     date: 'Winter 2017',
-    clientLogo: 'tgr-logo.svg',
+    clientLogo: logoAsset('tgr-logo.svg'),
     clientName: 'Teton Gravity Research',
     overview: 'Create a visual interpretation of the film, Rogue Elements.',
     tasks: [
@@ -303,12 +376,14 @@ const projects = [
       'print and digital ads'
     ],
     roles: ['print', 'ui', 'ux', 'front end dev', 'animator'],
+    hero: projectHero('rogue'),
+    preview: projectPreview('rogue'),
     blocks: [
       {
         type: 'video',
         title: 'Film Page',
         description: 'A landing point for all film specific info, content, and tour stops.',
-        media: { type: 'video', src: 'rogue.mp4' }
+        media: projectVideo('rogue', 'rogue.mp4')
       }
     ]
   },
@@ -318,7 +393,7 @@ const projects = [
     title: 'winterland',
     description: "Teton Gravity Research's 24th annual ski and snowboard film",
     date: 'Winter 2019',
-    clientLogo: 'tgr-logo.svg',
+    clientLogo: logoAsset('tgr-logo.svg'),
     clientName: 'Teton Gravity Research',
     overview: 'Create a visual interpretation of the film, Winterland.',
     tasks: [
@@ -330,12 +405,14 @@ const projects = [
       'print and digital ads'
     ],
     roles: ['print', 'ui', 'ux', 'front end dev', 'animator'],
+    hero: projectHero('winterland'),
+    preview: projectPreview('winterland'),
     blocks: [
       {
         type: 'video',
         title: 'Film Page',
         description: 'A landing point for all film specific info, content, and tour stops.',
-        media: { type: 'video', src: 'winterland.mp4' }
+        media: projectVideo('winterland', 'winterland.mp4')
       }
     ]
   },
@@ -345,7 +422,7 @@ const projects = [
     title: 'make believe',
     description: "Teton Gravity Research's 25th annual ski and snowboard film",
     date: 'Winter 2020',
-    clientLogo: 'tgr-logo.svg',
+    clientLogo: logoAsset('tgr-logo.svg'),
     clientName: 'Teton Gravity Research',
     overview: 'Create a visual interpretation of the film, Make Believe.',
     tasks: [
@@ -357,12 +434,14 @@ const projects = [
       'print and digital ads'
     ],
     roles: ['print', 'ui', 'ux', 'front end dev', 'animator'],
+    hero: projectHero('makebelieve'),
+    preview: projectPreview('makebelieve'),
     blocks: [
       {
         type: 'video',
         title: 'Film Page',
         description: 'A landing point for all film specific info, content, and tour stops.',
-        media: { type: 'video', src: 'makebelieve.mp4' }
+        media: projectVideo('makebelieve', 'makebelieve.mp4')
       }
     ]
   },
@@ -372,7 +451,7 @@ const projects = [
     title: 'accomplice',
     description: 'A mountain bike film directed by Jeremy Grant',
     date: 'Spring 2021',
-    clientLogo: 'tgr-logo.svg',
+    clientLogo: logoAsset('tgr-logo.svg'),
     clientName: 'Teton Gravity Research',
     overview: 'Create a visual interpretation of the film, Accomplice.',
     tasks: [
@@ -384,12 +463,14 @@ const projects = [
       'print and digital ads'
     ],
     roles: ['print', 'ui', 'ux', 'front end dev', 'animator'],
+    hero: projectHero('accomplice'),
+    preview: projectPreview('accomplice'),
     blocks: [
       {
         type: 'video',
         title: 'Film Page',
         description: 'A landing point for all film specific info, content, and tour stops.',
-        media: { type: 'video', src: 'accomplice.mp4' }
+        media: projectVideo('accomplice', 'accomplice.mp4')
       }
     ]
   },
@@ -399,17 +480,19 @@ const projects = [
     title: 'experimental series',
     description: 'melvin beers here',
     date: 'Fall 2019 - Now',
-    clientLogo: 'melvin-logo.svg',
+    clientLogo: logoAsset('melvin-logo.svg'),
     clientName: 'Melvin',
     overview: 'Some text about Melvin',
     tasks: ['packaging'],
     roles: ['print', 'prepress'],
+    hero: projectHero('melvin'),
+    preview: projectPreview('melvin'),
     blocks: [
       {
         type: 'video',
         title: 'Series Preview',
         description: 'A landing point for the experimental series.',
-        media: { type: 'video', src: 'melvin.mp4' }
+        media: projectVideo('melvin', 'melvin.mp4')
       }
     ]
   }
@@ -422,4 +505,4 @@ const getProjectBySlug = (slug) => projectsBySlug.get(slug);
 const getProjectsByCategory = (category) =>
   projects.filter((project) => project.category === category);
 
-export { projects, getProjectBySlug, getProjectsByCategory };
+export { projects, getProjectBySlug, getProjectsByCategory, ratios };

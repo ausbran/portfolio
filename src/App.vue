@@ -9,42 +9,52 @@
       :dotColorHover="'#ddd'"
       :hoverSize="1.7"
     ></custom-cursor>
-    <vue-page-transition name="fade">
-      <router-view :key="$route.fullPath" />
-    </vue-page-transition>
-    <img
-      class="fallback design"
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" :key="$route.fullPath" />
+      </transition>
+    </router-view>
+    <Asset
       v-if="$route.meta.design"
-      src="@/assets/general/design-fallback.jpg"
-      alt=""
+      class="fallback design"
+      :asset="fallbackImages.design"
+      :lazy="false"
     />
-    <img
-      class="fallback code"
+    <Asset
       v-if="$route.meta.code"
-      src="@/assets/general/code-fallback.jpg"
-      alt=""
+      class="fallback code"
+      :asset="fallbackImages.code"
+      :lazy="false"
     />
-    <img
-      class="fallback motion"
+    <Asset
       v-if="$route.meta.motion"
-      src="@/assets/general/motion-fallback.jpg"
-      alt=""
+      class="fallback motion"
+      :asset="fallbackImages.motion"
+      :lazy="false"
     />
     <videos />
   </div>
 </template>
 
 <script>
+import Asset from "@/components/Asset.vue";
 import navigation from "@/components/navigation.vue";
 import customCursor from "@/components/customCursor.vue";
 import videos from "@/components/videos.vue";
+import { fallbackImages } from "@/data/siteMedia";
 
 export default {
   name: "App",
   components: {
+    Asset,
     navigation,
     videos,
     customCursor,
+  },
+  data() {
+    return {
+      fallbackImages,
+    };
   },
 };
 </script>

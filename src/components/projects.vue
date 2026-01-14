@@ -9,12 +9,13 @@
       :description="project.description"
       :clientLogo="project.clientLogo"
       :clientName="project.clientName"
+      :preview="project.preview"
     />
   </div>
 </template>
 
 <script>
-import projectLink from './projectLink';
+import projectLink from './projectLink.vue';
 import { projects } from '@/data/projects';
 export default {
   name: 'projects',

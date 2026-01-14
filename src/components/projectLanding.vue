@@ -5,11 +5,12 @@
     <div class="client-date">
       <span class="client">
         Client
-        <img
+        <Asset
+          class="client-logo"
           :class="slug"
-          :src="require('@/assets/logos/' + clientLogo)"
-          :alt="clientName || ''"
-        >
+          :asset="logoAsset"
+          :lazy="false"
+        />
       </span>
       <span class="date">Date<span>{{ date }}</span></span>
     </div>
@@ -38,15 +39,18 @@
         <p>{{ overview }}</p>
       </div>
     </div>
-    <video
-      :src="require('@/assets/' + slug + '/' + slug + '.mp4')"
-      autoplay muted playsinline loop />
+    <Asset class="project-video" :asset="hero" />
   </div>
 </template>
 
 <script>
+import Asset from '@/components/Asset.vue';
+
 export default {
   name: 'ProjectLanding',
+  components: {
+    Asset
+  },
   props: {
     title: {
       type: String,
@@ -69,7 +73,7 @@ export default {
       default: ''
     },
     clientLogo: {
-      type: String,
+      type: Object,
       required: true
     },
     clientName: {
@@ -87,6 +91,18 @@ export default {
     overview: {
       type: String,
       default: ''
+    },
+    hero: {
+      type: Object,
+      required: true
+    }
+  },
+  computed: {
+    logoAsset() {
+      return {
+        ...this.clientLogo,
+        alt: this.clientLogo.alt || this.clientName || ''
+      };
     }
   }
 }

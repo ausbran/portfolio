@@ -8,10 +8,12 @@
       <router-link :to="`/${slug}`">
         <kinesis-container>
           <kinesis-element :strength="18" type="depth">
-            <img
-            :class="slug"
-            :src="require('@/assets/logos/' + clientLogo)"
-            :alt="clientName || ''">
+            <Asset
+              class="project-logo"
+              :class="slug"
+              :asset="logoAsset"
+              :lazy="false"
+            />
           </kinesis-element>
         </kinesis-container>
         <hr :class="{ active: hover }">
@@ -22,19 +24,29 @@
       </router-link>
       <div class="video-container">
         <div class="video-underlay" />
-        <video
-          ref="previewVideo"
+        <Asset
+          class="project-video"
           :class="{ active: hover }"
-          :src="require('@/assets/' + slug + '/' + slug + '.mp4')"
-          muted playsinline loop />
+          :asset="previewAsset"
+          :active="hover"
+        />
       </div>
     </div>
   </transition>
 </template>
 
 <script>
+import Asset from '@/components/Asset.vue';
+import KinesisContainer from '@/components/KinesisContainer.vue';
+import KinesisElement from '@/components/KinesisElement.vue';
+
 export default {
   name: 'projectLink',
+  components: {
+    Asset,
+    KinesisContainer,
+    KinesisElement
+  },
   props: {
     description: {
       type: String,
@@ -53,12 +65,16 @@ export default {
       required: true
     },
     clientLogo: {
-      type: String,
+      type: Object,
       required: true
     },
     clientName: {
       type: String,
       default: ''
+    },
+    preview: {
+      type: Object,
+      required: true
     }
   },
   data() {
@@ -66,24 +82,26 @@ export default {
       hover: false
     }
   },
+  computed: {
+    logoAsset() {
+      return {
+        ...this.clientLogo,
+        alt: this.clientLogo.alt || this.clientName || ''
+      };
+    },
+    previewAsset() {
+      return {
+        ...this.preview,
+        autoplay: false
+      };
+    }
+  },
   methods: {
     handleEnter() {
       this.hover = true;
-      const video = this.$refs.previewVideo;
-      if (video) {
-        const playPromise = video.play();
-        if (playPromise && playPromise.catch) {
-          playPromise.catch(() => {});
-        }
-      }
     },
     handleLeave() {
       this.hover = false;
-      const video = this.$refs.previewVideo;
-      if (video) {
-        video.pause();
-        video.currentTime = 0;
-      }
     }
   }
 }

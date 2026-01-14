@@ -1,14 +1,7 @@
 <template>
   <article class="project-block block-video">
     <div class="project-block-inner">
-      <video
-        class="project-video"
-        :src="assetUrl(block.media)"
-        autoplay
-        muted
-        playsinline
-        loop
-      />
+      <Asset class="project-video" :asset="block.media" />
     </div>
     <aside v-if="hasMeta">
       <h2 v-if="block.title">{{ block.title }}</h2>
@@ -18,28 +11,22 @@
 </template>
 
 <script>
-import { resolveAssetUrl } from '@/js/utils/media';
+import Asset from '@/components/Asset.vue';
 
 export default {
   name: 'BlockVideo',
+  components: {
+    Asset
+  },
   props: {
     block: {
       type: Object,
-      required: true
-    },
-    projectSlug: {
-      type: String,
       required: true
     }
   },
   computed: {
     hasMeta() {
       return Boolean(this.block.title || this.block.description);
-    }
-  },
-  methods: {
-    assetUrl(media) {
-      return resolveAssetUrl(this.projectSlug, media);
     }
   }
 };

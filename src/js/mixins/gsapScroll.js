@@ -1,3 +1,5 @@
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import locomotiveScroll from "locomotive-scroll";
 export default {
   mounted() {

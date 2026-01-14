@@ -4,14 +4,10 @@
       <div class="gallery-grid">
         <div
           v-for="(image, index) in images"
-          :key="image.id || `${projectSlug}-gallery-${index}`"
+          :key="image.id || `gallery-${index}`"
           class="project-image"
         >
-          <img
-            class="draggable"
-            :src="assetUrl(image)"
-            :alt="image.alt || ''"
-          >
+          <Asset class="draggable" :asset="image" :sizes="gallerySizes" />
         </div>
       </div>
     </div>
@@ -23,17 +19,16 @@
 </template>
 
 <script>
-import { resolveAssetUrl } from '@/js/utils/media';
+import Asset from '@/components/Asset.vue';
 
 export default {
   name: 'BlockGallery',
+  components: {
+    Asset
+  },
   props: {
     block: {
       type: Object,
-      required: true
-    },
-    projectSlug: {
-      type: String,
       required: true
     }
   },
@@ -41,13 +36,11 @@ export default {
     hasMeta() {
       return Boolean(this.block.title || this.block.description);
     },
+    gallerySizes() {
+      return this.block.sizes || '(min-width: 1200px) 35vw, 90vw';
+    },
     images() {
       return Array.isArray(this.block.images) ? this.block.images : [];
-    }
-  },
-  methods: {
-    assetUrl(media) {
-      return resolveAssetUrl(this.projectSlug, media);
     }
   }
 };

@@ -20,11 +20,11 @@
 .projectLink.slide-up-enter-active {
   transition: 2.5s $ease;
 }
-.slide-up-enter {
+.slide-up-enter-from {
   opacity: 0;
   @include translate(0,5vh,0);
 }
-.slide-up-leave, .slide-up-leave-to {
+.slide-up-leave-to {
   opacity: 0;
   @include translate(0,-5vh,0);
 }
@@ -33,11 +33,11 @@
 .slide-down-enter-active, .slide-down-leave-active {
   transition: 1.3s $ease;
 }
-.slide-down-enter {
+.slide-down-enter-from {
   opacity: 0;
   @include translate(0,-3vh,0);
 }
-.slide-down-leave, .slide-down-leave-to {
+.slide-down-leave-to {
   opacity: 0;
   @include translate(0,2vh,0);
 }
@@ -46,11 +46,11 @@
 .slide-down-close-enter-active, .slide-down-close-leave-active {
   transition: 1.3s $ease;
 }
-.slide-down-close-enter {
+.slide-down-close-enter-from {
   opacity: 0;
   @include translate(0,-1vh,0);
 }
-.slide-down-close-leave, .slide-down-close-leave-to {
+.slide-down-close-leave-to {
   opacity: 0;
   @include translate(0,1vh,0);
 }
@@ -59,11 +59,11 @@
 .slide-up-close-enter-active, .slide-up-close-leave-active {
   transition: 1.3s $ease;
 }
-.slide-up-close-enter {
+.slide-up-close-enter-from {
   opacity: 0;
   @include translate(0,1vh,0);
 }
-.slide-up-close-leave, .slide-up-close-leave-to {
+.slide-up-close-leave-to {
   opacity: 0;
   @include translate(0,-1vh,0);
 }
@@ -72,10 +72,10 @@
 .fade-enter-active, .fade-leave-active {
   transition: 1s $ease;
 }
-.fade-enter {
+.fade-enter-from {
   opacity: 0;
 }
-.fade-leave, .fade-leave-to {
+.fade-leave-to {
   opacity: 0;
 }
 
@@ -84,7 +84,7 @@
   transition: 1s $ease;
   @include scale(1);
 }
-.menu-enter, .menu-leave-to {
+.menu-enter-from, .menu-leave-to {
   opacity: 0;
   will-change: blur;
   @include scale(1.05);
@@ -97,7 +97,7 @@
   opacity: 1;
   width: 100%;
 }
-.line-enter, .line-leave-to  {
+.line-enter-from, .line-leave-to  {
   opacity: 0;
   width: 0;
 }
@@ -108,7 +108,7 @@
   height: 165vh;
   opacity: 1;
 }
-.video-enter, .video-leave-to  {
+.video-enter-from, .video-leave-to  {
   height: 10vh !important;
   opacity: 0;
 }

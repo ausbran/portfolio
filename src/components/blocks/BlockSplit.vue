@@ -2,60 +2,40 @@
   <article class="project-block block-split">
     <div class="project-block-inner" :class="{ drag: hasDraggable }">
       <template v-if="block.primary">
-        <video
+        <Asset
           v-if="isVideo(block.primary)"
           class="project-video"
-          :src="assetUrl(block.primary)"
-          autoplay
-          muted
-          playsinline
-          loop
+          :asset="block.primary"
         />
         <div v-else-if="isImage(block.primary)" class="project-image">
-          <img
-            class="draggable"
-            :src="assetUrl(block.primary)"
-            :alt="block.primary.alt || ''"
-          >
+          <Asset class="draggable" :asset="block.primary" />
         </div>
-        <vue-plyr v-else-if="isEmbed(block.primary)" class="project-video">
-          <div class="plyr__video-embed">
-            <iframe
-              :src="block.primary.url || block.primary.src"
-              allowfullscreen
-              allowtransparency
-              allow="autoplay"
-            ></iframe>
-          </div>
-        </vue-plyr>
+        <div v-else-if="isEmbed(block.primary)" class="project-video project-embed">
+          <iframe
+            :src="block.primary.url || block.primary.src"
+            allowfullscreen
+            allowtransparency
+            allow="autoplay; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
       </template>
       <template v-if="block.secondary">
-        <video
+        <Asset
           v-if="isVideo(block.secondary)"
           class="project-video"
-          :src="assetUrl(block.secondary)"
-          autoplay
-          muted
-          playsinline
-          loop
+          :asset="block.secondary"
         />
         <div v-else-if="isImage(block.secondary)" class="project-image">
-          <img
-            class="draggable"
-            :src="assetUrl(block.secondary)"
-            :alt="block.secondary.alt || ''"
-          >
+          <Asset class="draggable" :asset="block.secondary" />
         </div>
-        <vue-plyr v-else-if="isEmbed(block.secondary)" class="project-video">
-          <div class="plyr__video-embed">
-            <iframe
-              :src="block.secondary.url || block.secondary.src"
-              allowfullscreen
-              allowtransparency
-              allow="autoplay"
-            ></iframe>
-          </div>
-        </vue-plyr>
+        <div v-else-if="isEmbed(block.secondary)" class="project-video project-embed">
+          <iframe
+            :src="block.secondary.url || block.secondary.src"
+            allowfullscreen
+            allowtransparency
+            allow="autoplay; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
       </template>
     </div>
     <aside v-if="hasMeta">
@@ -66,17 +46,17 @@
 </template>
 
 <script>
-import { resolveAssetUrl, isMediaType } from '@/js/utils/media';
+import Asset from '@/components/Asset.vue';
+import { isMediaType } from '@/js/utils/media';
 
 export default {
   name: 'BlockSplit',
+  components: {
+    Asset
+  },
   props: {
     block: {
       type: Object,
-      required: true
-    },
-    projectSlug: {
-      type: String,
       required: true
     }
   },
@@ -89,9 +69,6 @@ export default {
     }
   },
   methods: {
-    assetUrl(media) {
-      return resolveAssetUrl(this.projectSlug, media);
-    },
     isVideo(media) {
       return isMediaType(media, 'video');
     },

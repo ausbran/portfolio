@@ -1,21 +1,13 @@
 <template>
   <article class="project-block block-toggle" :class="{ 'is-mock': showMock }">
     <div class="project-block-inner" :class="{ drag: hasImage }">
-      <video
-        v-if="block.media && block.media.video"
+      <Asset
+        v-if="block.media && block.media.video && !showMock"
         class="project-video"
-        :src="assetUrl(block.media.video)"
-        autoplay
-        muted
-        playsinline
-        loop
+        :asset="block.media.video"
       />
-      <div v-if="block.media && block.media.image" class="project-image">
-        <img
-          class="draggable"
-          :src="assetUrl(block.media.image)"
-          :alt="block.media.image.alt || ''"
-        >
+      <div v-if="block.media && block.media.image && showMock" class="project-image">
+        <Asset class="draggable" :asset="block.media.image" />
       </div>
     </div>
     <aside v-if="hasMeta">
@@ -27,21 +19,18 @@
 </template>
 
 <script>
-import toggleButtons from '@/components/toggleButtons';
-import { resolveAssetUrl } from '@/js/utils/media';
+import Asset from '@/components/Asset.vue';
+import toggleButtons from '@/components/toggleButtons.vue';
 
 export default {
   name: 'BlockToggle',
   components: {
+    Asset,
     toggleButtons
   },
   props: {
     block: {
       type: Object,
-      required: true
-    },
-    projectSlug: {
-      type: String,
       required: true
     }
   },
@@ -63,11 +52,6 @@ export default {
     },
     hasImage() {
       return Boolean(this.block.media && this.block.media.image);
-    }
-  },
-  methods: {
-    assetUrl(media) {
-      return resolveAssetUrl(this.projectSlug, media);
     }
   }
 };
