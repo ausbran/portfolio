@@ -1,3 +1,6 @@
+@use './_variables.scss' as *;
+@use './_mixins.scss' as *;
+
 //video player ---------------------------
 .design .plyr {
   --plyr-color-main: #ef7426;
@@ -6,11 +9,11 @@
   border-radius: $radius;
   --plyr-font-size-time: 10px;
   .plyr__controls {
+    background: none !important;
+    --plyr-control-spacing: 20px;
     * {
       font-weight: bold;
     }
-    background: none !important;
-    --plyr-control-spacing: 20px;
     .plyr__volume {
       max-width: 150px;
     }

@@ -1,3 +1,6 @@
+@use './_variables.scss' as *;
+@use './_mixins.scss' as *;
+
 .landing-video.about {
   z-index: -2 !important;
   mix-blend-mode: multiply;

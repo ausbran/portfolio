@@ -1,3 +1,6 @@
+@use './_variables.scss' as *;
+@use './_mixins.scss' as *;
+
 //universal styles ---------------------------------------------------------------------
 .no-scroll {
   overflow: hidden !important;

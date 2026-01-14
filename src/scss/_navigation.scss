@@ -1,3 +1,6 @@
+@use './_variables.scss' as *;
+@use './_mixins.scss' as *;
+
 .links {
   padding: 0 6vw;
   width: 100vw;

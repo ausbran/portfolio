@@ -1,3 +1,6 @@
+@use './_variables.scss' as *;
+@use './_mixins.scss' as *;
+
 @font-face {
   font-family: "F37 Jagger";
   src: url("../assets/fonts/F37Jagger-RegularItalic.woff") format("woff");

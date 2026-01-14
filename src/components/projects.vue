@@ -1,52 +1,42 @@
 <template>
   <div class="projectLinks">
     <projectLink
-      v-for="project in projects"
-      v-bind="project"
+      v-for="project in filteredProjects"
+      :key="project.slug"
+      :slug="project.slug"
+      :category="project.category"
+      :title="project.title"
+      :description="project.description"
+      :clientLogo="project.clientLogo"
+      :clientName="project.clientName"
     />
   </div>
 </template>
 
 <script>
 import projectLink from './projectLink';
-import json from '@/json/projects.json';
-import $ from 'jquery'
+import { projects } from '@/data/projects';
 export default {
   name: 'projects',
   components: {
     projectLink,
   },
-  props: {
-      name: String,
-  },
-  beforeCreate() {
-    var path = location.pathname.slice(1);
-    this.$nextTick(function () {
-      if (path === 'design')
-        $('.motion, .code').remove();
-    
-      if (path === 'code') 
-        $('.motion, .design').remove();
-      
-      if (path === 'motion') 
-        $('.code, .design').remove();
-    });
-  },
-  beforeRouteEnter (to, from, next) {
-    if(from.matched.some(route => route.meta.fromHome)){
-      next(vm => {
-        $('.fallback').hide();
-      })
-    } else {
-      next(vm => {
-        $('.fallback').show();
-      })
-    }
-  },
   data() {
     return {
-      projects: Object.values(json),
+      projects,
     };
+  },
+  computed: {
+    activeCategory() {
+      const categories = ['design', 'code', 'motion'];
+      return categories.includes(this.$route.name) ? this.$route.name : null;
+    },
+    filteredProjects() {
+      if (!this.activeCategory) {
+        return this.projects;
+      }
+      return this.projects.filter((project) => project.category === this.activeCategory);
+    }
   }
 };
 </script>

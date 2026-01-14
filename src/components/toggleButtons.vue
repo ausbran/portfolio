@@ -1,12 +1,18 @@
 <template>
   <div class="switch-type">
-    <a class="active" @click="$emit('hideMock', false)">Proto</a>
-    <a @click="$emit('showMock', true)">Mock</a>
+    <a :class="{ active: !value }" @click="$emit('input', false)">Proto</a>
+    <a :class="{ active: value }" @click="$emit('input', true)">Mock</a>
   </div>
 </template>
 
 <script>
 export default {
-  name: "toggleButtons"
+  name: "toggleButtons",
+  props: {
+    value: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>

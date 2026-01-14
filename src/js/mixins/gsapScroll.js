@@ -5,6 +5,11 @@ export default {
       gsap.registerPlugin(ScrollTrigger);
 
       const pageContainer = document.querySelector(".project-container");
+      const pinWrap = document.querySelector(".pin-container");
+
+      if (!pageContainer || !pinWrap) {
+        return;
+      }
 
       const scroller = new locomotiveScroll({
         el: pageContainer,
@@ -31,8 +36,6 @@ export default {
       });
 
       // gsap horizontal function
-      let pinBoxes = document.querySelectorAll(".pin-container > *");
-      let pinWrap = document.querySelector(".pin-container");
       let pinWrapWidth = pinWrap.offsetWidth;
       let horizontalScrollLength = pinWrapWidth - window.innerWidth;
 

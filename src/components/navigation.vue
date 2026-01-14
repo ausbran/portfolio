@@ -62,7 +62,6 @@
 </template>
 
 <script>
-import $ from "jquery";
 import navigationLinks from "./navigationLinks";
 export default {
   name: "navigation",

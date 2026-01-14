@@ -3,13 +3,11 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import VuePageTransition from 'vue-page-transition'
 import VueKinesis from "vue-kinesis";
-import $ from 'jquery'
 import routes from './js/routes'
-import scripts from './js/scripts'
 import VuePlyr from 'vue-plyr'
 import 'vue-plyr/dist/vue-plyr.css'
+import './scss/main.scss'
 
-require('./main.js')
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter)
@@ -26,7 +24,7 @@ const router = new VueRouter({
 	routes
 });
 
-const vue = new Vue({
+new Vue({
 	// data: { loading: false },
   router,
   render: h => h(App)

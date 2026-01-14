@@ -1,28 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Austin Branham: Hood River, Oregon Design & Development</title>
-    <meta name="Description" content="Graphic Design and Web Development services in the Columbia River Gorge">
-    <meta name="Keywords" content="Hood River, Oregon, Design, Development, Motion Graphics, Graphic Design, Web Development, Front End Development, Columbia Gorge Graphic Design">
-    <!-- <link rel="stylesheet" href="/css/bin/normalize.css"> -->
-    <link rel="stylesheet" href="/css/bin/main.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Austin Branham | Designer, Front End Developer, Motion + Branding</title>
+		<meta name="description" content="Austin Branham is a designer and front end developer in Hood River, Oregon. Web design, animation, branding, and packaging for action sports and beer brands. Remote worldwide.">
+		<meta name="keywords" content="Austin Branham, graphic designer, web design, front end development, animation, branding, packaging design, action sports, beer industry, Hood River Oregon, remote designer">
+		<meta name="author" content="Austin Branham">
+		<meta name="robots" content="index, follow">
+		<meta name="theme-color" content="#0b0b0b">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="canonical" href="<%= process.env.VUE_APP_SITE_URL || BASE_URL %>">
+
+		<meta property="og:type" content="website">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Austin Branham">
+		<meta property="og:title" content="Austin Branham | Designer, Front End Developer, Motion + Branding">
+		<meta property="og:description" content="Portfolio of Austin Branham — web design, animation, branding, and packaging for action sports and beer brands.">
+    <meta property="og:url" content="<%= process.env.VUE_APP_SITE_URL || BASE_URL %>">
+    <meta property="og:image" content="<%= process.env.VUE_APP_SITE_URL || BASE_URL %>img/og-image.jpg">
+		<meta property="og:image:alt" content="Austin Branham portfolio preview">
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Austin Branham | Designer, Front End Developer, Motion + Branding">
+		<meta name="twitter:description" content="Web design, motion, branding, and packaging work by Austin Branham.">
+    <meta name="twitter:image" content="<%= process.env.VUE_APP_SITE_URL || BASE_URL %>img/og-image.jpg">
+
+		<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+		<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-  </head>
-  <body>
-    <noscript>
-      <strong>STOP NOW! ENABLE JAVASCRIPT NOW! ALERT! ALERT! DETONATE in 3..... 2..... 1......</strong>
-    </noscript>
-    <div id="app"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-  </body>
+
+		<script type="application/ld+json">
+			{
+			        "@context": "https://schema.org",
+			        "@type": "Person",
+			        "name": "Austin Branham",
+			        "jobTitle": "Designer and Front End Developer",
+			        "description": "Designer and front end developer specializing in web design, animation, branding, and packaging for action sports and beer brands. Based in Hood River, Oregon and available for remote work.",
+        "url": "<%= process.env.VUE_APP_SITE_URL || BASE_URL %>",
+        "address": {
+			          "@type": "PostalAddress",
+			          "addressLocality": "Hood River",
+			          "addressRegion": "OR",
+			          "addressCountry": "US"
+			        },
+			        "areaServed": "Worldwide",
+			        "knowsAbout": [
+			          "web design",
+			          "front end development",
+			          "animation",
+			          "branding",
+			          "packaging design",
+			          "motion graphics",
+			          "action sports",
+			          "beer industry"
+			        ]
+			      }
+		</script>
+	</head>
+	<body>
+		<noscript>
+			<strong>This site needs JavaScript enabled to display project videos and animations.</strong>
+		</noscript>
+		<div id="app"></div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+	</body>
 </html>

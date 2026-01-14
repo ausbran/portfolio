@@ -1,18 +1,15 @@
 <template>
   <div id="landing-container">
-    <!-- <navigationLinks /> -->
-    <about />
+    <navigationLinks />
   </div>
 </template>
 
 <script>
 import navigationLinks from "./navigationLinks";
-import about from "./about";
 export default {
   name: "home",
   components: {
     navigationLinks,
-    about,
   },
 };
 </script>

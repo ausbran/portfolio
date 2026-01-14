@@ -1,3 +1,6 @@
+@use './_variables.scss' as *;
+@use './_mixins.scss' as *;
+
 //slide-up ---------------------------
 .text .slide-up-enter-active:nth-of-type(2),
 .projectLink.slide-up-enter-active:nth-of-type(2) {

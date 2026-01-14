@@ -1,3 +1,6 @@
+@use './_variables.scss' as *;
+@use './_mixins.scss' as *;
+
 //projectLinks ---------------------------
 .pswp__bg {
   opacity: 1 !important;
@@ -244,10 +247,6 @@
     justify-content: flex-start;
     align-items: center;
   }
-  .project-block-outer {
-    height: inherit;
-    display: flex;
-  }
 
   // project-block section
   .project-block {
@@ -284,9 +283,14 @@
         }
       }
     }
-    .project-image, video {
+    .project-image,
+    .project-video {
       max-width: 100%;
       border-radius: $radius;
+    }
+    .project-video {
+      width: 100%;
+      display: block;
     }
     .project-image {
       height: 100%;
@@ -301,7 +305,8 @@
         object-fit: cover;
       }
     }
-    video, aside {
+    .project-video,
+    aside {
       transition: .28s $ease;
     }
     aside {
@@ -329,64 +334,15 @@
           &:first-of-type {
             margin-right: 10px;
           }
+          &.active {
+            opacity: 1;
+          }
         }
       }
       p {
         width: 100%;
         @include projectText;
         display: inline-block;
-      }
-    }
-
-    // styles for all the different project blocks
-    &.desktopToggle {
-      .project-image {
-        position: absolute;
-        top: 0;
-      }
-    }
-    &.desktopImg {
-      .project-block-inner {
-        height: 100%;
-      }
-    }
-    &.mobileImg {
-      width: 29vw;
-      max-width: 420px;
-      min-width: 280px;
-    }
-    &.desktopAndMobile {
-      margin-right: 20vw;
-      .project-image:nth-child(2),
-      video:nth-child(2) {
-        background: $white;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        left: 90%;
-        width: 20vw;
-        border-radius: $radius;
-        box-shadow: -10px 0px 50px rgba(0,0,0,.3);
-        transition: .75s $ease;
-        &:hover {
-          transform: scale(1.02) translateY(-5px);
-          box-shadow: -10px 0px 60px rgba(0,0,0,.5);
-        }
-      }
-      .project-image:nth-child(2) {
-        height: 85%;
-      }
-      video:nth-child(2) {
-        height: unset;
-      }
-    }
-    &.quote {
-      width: 50vw;
-      blockquote {
-        font-size: 3vw;
-        font-weight: 600;
-        max-width: 800px;
       }
     }
 
